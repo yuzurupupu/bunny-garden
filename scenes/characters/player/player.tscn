@@ -1,6 +1,10 @@
-[gd_scene load_steps=164 format=3 uid="uid://dbqt1w87ujw4g"]
+[gd_scene load_steps=168 format=3 uid="uid://dbqt1w87ujw4g"]
 
 [ext_resource type="Texture2D" uid="uid://b0vnaxj4v1q2" path="res://art/characters/Premium Charakter Spritesheet.png" id="1_7uws0"]
+[ext_resource type="Script" uid="uid://c74v0lm2hviyj" path="res://scenes/characters/player/player.gd" id="1_qd3e3"]
+[ext_resource type="Script" uid="uid://brxm3al3acs4a" path="res://scripts/state_machine/player_state_machine.gd" id="2_t61fv"]
+[ext_resource type="Script" uid="uid://cuo57oe0j3ucu" path="res://scenes/characters/player/idle_state.gd" id="3_686vu"]
+[ext_resource type="Script" uid="uid://bmplbsivdtqxm" path="res://scenes/characters/player/walk_state.gd" id="4_hss88"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kbkvr"]
 atlas = ExtResource("1_7uws0")
@@ -1018,7 +1022,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_xm30n")
 }],
 "loop": true,
-"name": &"walking_back",
+"name": &"walk_back",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1047,7 +1051,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_ejaeo")
 }],
 "loop": true,
-"name": &"walking_front",
+"name": &"walk_front",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1076,7 +1080,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_2k8cp")
 }],
 "loop": true,
-"name": &"walking_left",
+"name": &"walk_left",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1105,7 +1109,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_i41yg")
 }],
 "loop": true,
-"name": &"walking_right",
+"name": &"walk_right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1229,13 +1233,28 @@ animations = [{
 radius = 9.0
 
 [node name="player" type="CharacterBody2D"]
+script = ExtResource("1_qd3e3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_3xnwo")
-animation = &"idle_front"
+animation = &"walk_right"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -9)
 shape = SubResource("CircleShape2D_7uws0")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
+script = ExtResource("2_t61fv")
+initial_node_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+script = ExtResource("3_686vu")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("player", "animated_sprite_2d")]
+script = ExtResource("4_hss88")
+player = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
