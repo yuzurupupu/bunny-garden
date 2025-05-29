@@ -1233,9 +1233,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7uws0"]
-radius = 9.0
+radius = 5.09902
 
 [node name="player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_qd3e3")
 current_tool = 1
 
@@ -1246,7 +1247,7 @@ animation = &"watering_right"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -9)
+position = Vector2(0, -5)
 shape = SubResource("CircleShape2D_7uws0")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
