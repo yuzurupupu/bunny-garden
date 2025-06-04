@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dskicjinucp5g" path="res://scenes/objects/tree/big_tree.gd" id="2_8kafe"]
 [ext_resource type="PackedScene" uid="uid://kbch56ljyk3k" path="res://scenes/component/hurt_component.tscn" id="2_xmv4s"]
 [ext_resource type="PackedScene" uid="uid://deeqsbfgt4kbn" path="res://scenes/component/damage_component.tscn" id="3_8kafe"]
-[ext_resource type="Shader" uid="uid://c2ykc3ydqc8hp" path="res://scenes/objects/tree/tree_shake.gdshader" id="5_mt2w1"]
+[ext_resource type="Shader" uid="uid://c2ykc3ydqc8hp" path="res://scenes/objects/tree/shake.gdshader" id="5_mt2w1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygx4o"]
 atlas = ExtResource("1_1ouo2")

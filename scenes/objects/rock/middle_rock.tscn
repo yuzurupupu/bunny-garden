@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://bpcnhkpvvnuom"]
+
+[ext_resource type="Shader" uid="uid://dnnpo8nkaxnyl" path="res://scenes/objects/rock/shake.gdshader" id="1_ea7yn"]
+[ext_resource type="Texture2D" uid="uid://baq8eajqpai6x" path="res://art/objects/Mushrooms, Flowers, Stones.png" id="1_osd6v"]
+[ext_resource type="Script" uid="uid://4u7xtpmnmqiv" path="res://scenes/objects/rock/middle_rock.gd" id="2_jd5qt"]
+[ext_resource type="PackedScene" uid="uid://kbch56ljyk3k" path="res://scenes/component/hurt_component.tscn" id="2_ya2dw"]
+[ext_resource type="PackedScene" uid="uid://deeqsbfgt4kbn" path="res://scenes/component/damage_component.tscn" id="3_jd5qt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qa18c"]
+resource_local_to_scene = true
+shader = ExtResource("1_ea7yn")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffoka"]
+atlas = ExtResource("1_osd6v")
+region = Rect2(100, 27, 25, 20)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ea7yn"]
+radius = 6.08276
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qa18c"]
+
+[node name="MiddleRock" type="Sprite2D"]
+material = SubResource("ShaderMaterial_qa18c")
+position = Vector2(0, -6)
+texture = SubResource("AtlasTexture_ffoka")
+script = ExtResource("2_jd5qt")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_ea7yn")
+debug_color = Color(0.615554, 0.530309, 0.232744, 0.42)
+
+[node name="HurtComponent" parent="." instance=ExtResource("2_ya2dw")]
+tool = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+shape = SubResource("CircleShape2D_qa18c")
+debug_color = Color(0.872791, 0.195595, 0.710183, 0.42)
+
+[node name="DamageComponent" parent="." instance=ExtResource("3_jd5qt")]
+max_damage = 5

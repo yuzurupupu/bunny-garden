@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dybnxvni8g0fs"]
+
+[ext_resource type="Texture2D" uid="uid://baq8eajqpai6x" path="res://art/objects/Mushrooms, Flowers, Stones.png" id="1_pc11k"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_o7ixd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o7ixd"]
+atlas = ExtResource("1_pc11k")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o8575"]
+radius = 4.0
+
+[node name="MiddleStone" type="Sprite2D"]
+position = Vector2(0, -3)
+texture = SubResource("AtlasTexture_o7ixd")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_o7ixd")]
+collectable_name = "middle_stone"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_o8575")
+debug_color = Color(0.892563, 0.262757, 0.482814, 0.42)
