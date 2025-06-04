@@ -3,7 +3,7 @@ extends PlayerState
 
 @export var character: CharacterBody2D
 @export var animated_sprite_2d: AnimatedSprite2D
-@export var idle_state_time_interval: float = 5.0
+@export var idle_state_time_interval: float = 10.0
 
 @onready var idle_state_timer: Timer = Timer.new()
 
@@ -17,15 +17,26 @@ func _ready() -> void:
 func _on_process(_delta : float) -> void:
 	pass
 
-
 func _on_physics_process(_delta : float) -> void:
 	pass
 
-
 func _on_next_transitions() -> void:
 	if idle_state_timeout:
-		transition.emit("Walk")
+		var choices := {
+			"Walk": 40,
+			"Observe": 30,
+			"Sleep": 20,
+			"Jump": 10
+		}
+		
+		var state_pool: Array[String] = []
+		for state in choices.keys():
+			for i in choices[state]:
+				state_pool.append(state)
 
+		if state_pool.size() > 0:
+			var next_state = state_pool[randi() % state_pool.size()]
+			transition.emit(next_state)
 
 func _on_enter() -> void:
 	animated_sprite_2d.play("idle")

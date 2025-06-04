@@ -1,10 +1,13 @@
-[gd_scene load_steps=51 format=3 uid="uid://dqwkhwx8rl12j"]
+[gd_scene load_steps=54 format=3 uid="uid://dqwkhwx8rl12j"]
 
 [ext_resource type="Texture2D" uid="uid://flhlrwcjp4xb" path="res://art/animals/Chicken/chicken default.png" id="1_be5x3"]
 [ext_resource type="Script" uid="uid://dcgero4odfdrp" path="res://scenes/characters/chicken/chicken.gd" id="1_r6a33"]
 [ext_resource type="Script" uid="uid://brxm3al3acs4a" path="res://scripts/state_machine/player_state_machine.gd" id="2_awcwn"]
 [ext_resource type="Script" uid="uid://dx26woxqytf5r" path="res://scenes/characters/chicken/idle_state.gd" id="3_31inw"]
 [ext_resource type="Script" uid="uid://oj81g01da6w5" path="res://scenes/characters/chicken/walk_state.gd" id="4_31inw"]
+[ext_resource type="Script" uid="uid://bk2gar0muulpl" path="res://scenes/characters/chicken/observe_state.gd" id="6_wh5lc"]
+[ext_resource type="Script" uid="uid://bbr0g0rwrpbvg" path="res://scenes/characters/chicken/sleep_state.gd" id="7_vmevo"]
+[ext_resource type="Script" uid="uid://ckutcjvh6041" path="res://scenes/characters/chicken/jump_state.gd" id="8_ft40v"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_asyyu"]
 atlas = ExtResource("1_be5x3")
@@ -381,3 +384,18 @@ script = ExtResource("4_31inw")
 character = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 navigation_agent_2d = NodePath("../../NavigationAgent2D")
+
+[node name="Observe" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d")]
+script = ExtResource("6_wh5lc")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Sleep" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d")]
+script = ExtResource("7_vmevo")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Jump" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d")]
+script = ExtResource("8_ft40v")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")

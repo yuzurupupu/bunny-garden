@@ -4,7 +4,7 @@ extends PlayerState
 @export var animated_sprite_2d: AnimatedSprite2D
 @export var navigation_agent_2d: NavigationAgent2D
 @export var min_speed: float = 5.0
-@export var max_speed: float = 10.0
+@export var max_speed: float = 12.0
 
 var speed: float
 
