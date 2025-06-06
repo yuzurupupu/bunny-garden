@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dln2xyrhll7os"]
+
+[ext_resource type="Texture2D" uid="uid://c0qf0kovitsgw" path="res://art/objects/Items/farming-Plants-items.png" id="1_7n4gh"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_bvh2a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvh2a"]
+atlas = ExtResource("1_7n4gh")
+region = Rect2(16, 97, 16, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dofxo"]
+radius = 6.08276
+
+[node name="RoseHarvest" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_bvh2a")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_bvh2a")]
+collectable_name = "rose"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_dofxo")

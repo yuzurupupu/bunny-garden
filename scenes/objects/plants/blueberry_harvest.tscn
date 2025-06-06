@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciwl0p13jjiok"]
+
+[ext_resource type="Texture2D" uid="uid://c0qf0kovitsgw" path="res://art/objects/Items/farming-Plants-items.png" id="1_eg4sw"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_7mexc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mexc"]
+atlas = ExtResource("1_eg4sw")
+region = Rect2(15, 192, 17, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_plawq"]
+radius = 8.0
+
+[node name="BlueberryHarvest" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_7mexc")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_7mexc")]
+collectable_name = "blueberry"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_plawq")

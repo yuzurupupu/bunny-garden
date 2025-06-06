@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://uuhsqq51k6c6"]
+
+[ext_resource type="Texture2D" uid="uid://bvxpw1kff126e" path="res://art/objects/Items/egg-items.png" id="1_w605v"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_oe6d2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64idu"]
+atlas = ExtResource("1_w605v")
+region = Rect2(49, 1, 14, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3xh7t"]
+radius = 7.0
+
+[node name="GreenEgg" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_64idu")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_oe6d2")]
+collectable_name = "green egg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_3xh7t")

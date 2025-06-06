@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://daaik64jb43cx"]
+
+[ext_resource type="Texture2D" uid="uid://bvxpw1kff126e" path="res://art/objects/Items/egg-items.png" id="1_rjdtl"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_aswic"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l85h4"]
+atlas = ExtResource("1_rjdtl")
+region = Rect2(17, 1, 14, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_usfh2"]
+radius = 7.07107
+
+[node name="BrownEgg" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_l85h4")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_aswic")]
+collectable_name = "brown egg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_usfh2")

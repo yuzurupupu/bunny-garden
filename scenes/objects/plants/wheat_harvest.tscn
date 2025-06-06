@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6r2tkcjc5wrx"]
+
+[ext_resource type="Texture2D" uid="uid://c0qf0kovitsgw" path="res://art/objects/Items/farming-Plants-items.png" id="1_r76eo"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_w1edi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1edi"]
+atlas = ExtResource("1_r76eo")
+region = Rect2(16, 129, 16, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_of7pp"]
+radius = 6.32456
+
+[node name="WheatHarvest" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_w1edi")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_w1edi")]
+collectable_name = "wheat"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_of7pp")

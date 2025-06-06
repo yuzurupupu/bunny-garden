@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b58mt01r47x3y"]
+
+[ext_resource type="Texture2D" uid="uid://bvxpw1kff126e" path="res://art/objects/Items/egg-items.png" id="1_7li7q"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_ohkxv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5jlt"]
+atlas = ExtResource("1_7li7q")
+region = Rect2(65, 1, 14, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s6x0w"]
+radius = 7.0
+
+[node name="BlueEgg" type="Sprite2D"]
+texture = SubResource("AtlasTexture_m5jlt")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_ohkxv")]
+collectable_name = "blue egg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+y_sort_enabled = true
+shape = SubResource("CircleShape2D_s6x0w")

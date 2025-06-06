@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0rpx16xyrcg5"]
+
+[ext_resource type="Texture2D" uid="uid://c0qf0kovitsgw" path="res://art/objects/Items/farming-Plants-items.png" id="1_qkgv0"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_ec27q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec27q"]
+atlas = ExtResource("1_qkgv0")
+region = Rect2(15, 160, 17, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jjrvo"]
+radius = 5.83095
+
+[node name="RadishHarvest" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_ec27q")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_ec27q")]
+collectable_name = "radish"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_jjrvo")

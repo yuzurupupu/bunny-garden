@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bh7foljm6t52c"]
+
+[ext_resource type="Texture2D" uid="uid://sn1132cdrfaq" path="res://art/objects/Items/fruit-n-berries-items.png" id="1_nw8hv"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_llsc6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llsc6"]
+atlas = ExtResource("1_nw8hv")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_alydn"]
+radius = 7.07107
+
+[node name="Pear" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_llsc6")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_llsc6")]
+collectable_name = "pear"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_alydn")

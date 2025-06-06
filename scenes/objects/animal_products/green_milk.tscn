@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://d076if6q2ugv7"]
+
+[ext_resource type="Texture2D" uid="uid://bmsjuqkqay8o0" path="res://art/objects/Items/milk-items.png" id="1_dwbwl"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_syemg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xeqmh"]
+atlas = ExtResource("1_dwbwl")
+region = Rect2(17, 161, 14, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ysuti"]
+radius = 6.0
+
+[node name="GreenMilk" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_xeqmh")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_syemg")]
+collectable_name = "green milk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_ysuti")

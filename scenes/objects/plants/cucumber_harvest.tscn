@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cead2kpoc6vbh"]
+
+[ext_resource type="Texture2D" uid="uid://c0qf0kovitsgw" path="res://art/objects/Items/farming-Plants-items.png" id="1_pbdbf"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_2aanq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2aanq"]
+atlas = ExtResource("1_pbdbf")
+region = Rect2(15, 225, 17, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d4q27"]
+radius = 5.0
+
+[node name="CucumberHarvest" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_2aanq")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_2aanq")]
+collectable_name = "cucumber"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_d4q27")

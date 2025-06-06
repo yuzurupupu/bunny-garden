@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjnns1ooqvbs3"]
+
+[ext_resource type="Texture2D" uid="uid://c0qf0kovitsgw" path="res://art/objects/Items/farming-Plants-items.png" id="1_brebo"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_qyf0p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyf0p"]
+atlas = ExtResource("1_brebo")
+region = Rect2(15, 144, 18, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vtcqi"]
+radius = 9.0
+
+[node name="PumpkinHarvest" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_qyf0p")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_qyf0p")]
+collectable_name = "pumpkin"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_vtcqi")

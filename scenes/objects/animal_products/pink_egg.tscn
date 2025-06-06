@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm8oqmtabpt4o"]
+
+[ext_resource type="Texture2D" uid="uid://bvxpw1kff126e" path="res://art/objects/Items/egg-items.png" id="1_p3ifs"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_ecda4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e06hu"]
+atlas = ExtResource("1_p3ifs")
+region = Rect2(33, 1, 14, 14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m48ix"]
+radius = 7.07107
+
+[node name="PinkEgg" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_e06hu")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_ecda4")]
+collectable_name = "pink egg"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_m48ix")

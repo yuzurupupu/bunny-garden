@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dx36xigeahsil"]
+
+[ext_resource type="Texture2D" uid="uid://c0qf0kovitsgw" path="res://art/objects/Items/farming-Plants-items.png" id="1_bxe2a"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_g82wl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0d3w"]
+atlas = ExtResource("1_bxe2a")
+region = Rect2(15, 15, 17, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_weoe3"]
+size = Vector2(9, 14)
+
+[node name="CornHavest" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_h0d3w")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_g82wl")]
+collectable_name = "corn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_weoe3")

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq4tw4o8pse7n"]
+
+[ext_resource type="Texture2D" uid="uid://c0qf0kovitsgw" path="res://art/objects/Items/farming-Plants-items.png" id="1_44pmm"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_3h22p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h22p"]
+atlas = ExtResource("1_44pmm")
+region = Rect2(16, 208, 16, 17)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5rtv2"]
+radius = 8.0
+
+[node name="CottonHarvest" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_3h22p")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_3h22p")]
+collectable_name = "cotton"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_5rtv2")
