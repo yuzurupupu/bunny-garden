@@ -6,5 +6,6 @@ enum Tools {
 	TillGround,
 	WaterCrops,
 	PlantCorn,
-	PlantTomated
+	PlantTomated,
+	PlantCarrot,
 }

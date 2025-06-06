@@ -13,7 +13,7 @@ func _ready() -> void:
 	call_deferred("character_setup")
 	
 func character_setup() -> void:
-	await get_tree().physics_frame
+	await get_tree().process_frame
 	
 	set_movement_target()
 	
