@@ -6,11 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://c88wv2fonw2wd" path="res://scenes/objects/tree/small_tree.tscn" id="2_pi5w0"]
 [ext_resource type="PackedScene" uid="uid://3lgnaac0khpt" path="res://scenes/objects/tree/middle_tree.tscn" id="3_ow828"]
 [ext_resource type="Texture2D" uid="uid://tvm4hguk5b1e" path="res://art/tilesets/ground tiles/Old tiles/Tilled_Dirt_Wide.png" id="3_xwv23"]
-[ext_resource type="Texture2D" uid="uid://dr0de6klgxvgd" path="res://art/objects/Farming Plants.png" id="4_0b0mn"]
 [ext_resource type="PackedScene" uid="uid://bk3s0j1jrcvx1" path="res://scenes/objects/tree/big_tree.tscn" id="4_4agr7"]
 [ext_resource type="PackedScene" uid="uid://r7qux05xtr2" path="res://scenes/objects/rock/small_rock.tscn" id="5_tmfy7"]
 [ext_resource type="PackedScene" uid="uid://bpcnhkpvvnuom" path="res://scenes/objects/rock/middle_rock.tscn" id="6_skfke"]
 [ext_resource type="PackedScene" uid="uid://74qp53lvr45i" path="res://scenes/objects/rock/big_rock.tscn" id="7_tl0r4"]
+[ext_resource type="Texture2D" uid="uid://dr0de6klgxvgd" path="res://art/objects/Items/Farming Plants.png" id="11_skfke"]
 [ext_resource type="Texture2D" uid="uid://cyma7coglk2g0" path="res://art/tilesets/Building parts/Fences.png" id="12_skfke"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_pi5w0"]
@@ -498,7 +498,7 @@ texture = ExtResource("3_xwv23")
 10:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ow828"]
-texture = ExtResource("4_0b0mn")
+texture = ExtResource("11_skfke")
 3:5/0 = 0
 2:5/0 = 0
 1:5/0 = 0

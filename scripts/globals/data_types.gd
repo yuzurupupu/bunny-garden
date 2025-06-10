@@ -9,3 +9,12 @@ enum Tools {
 	PlantTomated,
 	PlantCarrot,
 }
+
+enum GrowthStates {
+	Seed,
+	Germination,
+	Vegetative,
+	Reproduction,
+	Maturity,
+	Harvesting
+}
