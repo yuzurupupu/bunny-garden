@@ -116,5 +116,5 @@ icon_alignment = 1
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolCornSeed" to="." method="_on_tool_corn_seed_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTomatoSeed" to="." method="_on_tool_tomato_seed_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolCarrotSeed" to="." method="_on_tool_carrot_seed_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWheatSeed" to="." method="_on_tool_carrot_seed_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWheatSeed" to="." method="_on_tool_wheat_seed_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWheatSeed" to="." method="_on_tool_carrot_seed_pressed"]

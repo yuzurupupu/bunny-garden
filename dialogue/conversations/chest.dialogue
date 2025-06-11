@@ -1,23 +1,23 @@
 ~ start_cow_pasture_box
 
-Pasture Box: [[Hi|Hello|Howdy]], your animals are hungry.
-Pasture Box: Would you like to feed your cows?
+Pasture Box: [[Hi|Hello|Howdy]], the cows look a little restless — they're getting hungry.
+Pasture Box: Would you like to give them some feed now?
 - Yes
-	Marlow: Yeah! Lets feed my cows.
+	Marlow: Of course! Happy cows, happy farm.
 	do GameDialogueManager.action_feed_animals()
 - No
-	Marlow: No,I don't need to feed them. I have enough milk.
+	Marlow: Hmm, not now. I’ve got enough milk stocked up.
 
 => END
 
 ~ start_chicken_pasture_box
 
-Pasture Box: [[Hi|Hello|Howdy]], your animals are hungry.
-Pasture Box: Would you like to feed your chickens?
+Pasture Box: [[Hi|Hello|Hey there]], the chickens are clucking louder than usual — sounds like mealtime!
+Pasture Box: Would you like to feed your chickens now?
 - Yes
-	Marlow: Yeah! Lets feed my chickens.
+	Marlow: Definitely! Time for a chicken feast.
 	do GameDialogueManager.action_feed_animals()
 - No
-	Marlow: No, I don't need to feed them. I have enough eggs.
+	Marlow: Not today. I’ve got plenty of eggs already.
 
 => END
