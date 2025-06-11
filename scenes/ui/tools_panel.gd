@@ -20,6 +20,9 @@ func _ready()-> void:
 	
 	tool_tomato_seed.disabled = true
 	tool_tomato_seed.focus_mode = Control.FOCUS_NONE
+	
+	tool_carrot_seed.disabled = true
+	tool_carrot_seed.focus_mode = Control.FOCUS_NONE
 
 func _on_tool_axe_pressed() -> void:
 	ToolManager.select_tool(DataType.Tools.AxeWood)
@@ -60,18 +63,18 @@ func on_enable_tool_button(tool: DataType.Tools) -> void:
 		tool_tilling.disabled = false
 		tool_tilling.focus_mode = Control.FOCUS_ALL
 	
-	if tool == DataType.Tools.WaterCrops:
+	elif tool == DataType.Tools.WaterCrops:
 		tool_watering_can.disabled = false
 		tool_watering_can.focus_mode = Control.FOCUS_ALL
 		
-	if tool == DataType.Tools.PlantCorn:
+	elif tool == DataType.Tools.PlantCorn:
 		tool_corn_seed.disabled = false
 		tool_corn_seed.focus_mode = Control.FOCUS_ALL
 		
-	if tool == DataType.Tools.PlantTomato:
+	elif tool == DataType.Tools.PlantTomato:
 		tool_tomato_seed.disabled = false
 		tool_tomato_seed.focus_mode = Control.FOCUS_ALL
 		
-	if tool == DataType.Tools.PlantCarrot:
+	elif tool == DataType.Tools.PlantCarrot:
 		tool_carrot_seed.disabled = false
 		tool_carrot_seed.focus_mode = Control.FOCUS_ALL

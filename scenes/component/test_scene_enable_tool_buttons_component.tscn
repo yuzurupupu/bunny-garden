@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8w4tud555uq4"]
+
+[ext_resource type="Script" uid="uid://chov6utn7eqnb" path="res://scenes/component/test_scene_enable_tool_buttons_component.gd" id="1_jduaj"]
+
+[node name="TestSceneEnableToolButtonsComponent" type="Node"]
+script = ExtResource("1_jduaj")

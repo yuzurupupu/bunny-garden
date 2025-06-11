@@ -15,6 +15,7 @@ y_sort_enabled = true
 texture = SubResource("AtlasTexture_ru7wh")
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_ru7wh")]
+collision_layer = 160
 collectable_name = "tomato"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
