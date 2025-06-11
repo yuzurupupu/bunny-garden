@@ -1,12 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://48g72f0qtcos"]
+[gd_scene load_steps=18 format=3 uid="uid://48g72f0qtcos"]
 
 [ext_resource type="Theme" uid="uid://divq4klakmuwc" path="res://scenes/ui/game_ui_theme.tres" id="1_ta3uk"]
 [ext_resource type="Script" uid="uid://dy3a5cifk1u8r" path="res://scenes/ui/inventory_panel.gd" id="2_b11k6"]
 [ext_resource type="Texture2D" uid="uid://dw36j2kctov45" path="res://art/objects/Items/tools-n-meterial-items.png" id="2_lcq1t"]
 [ext_resource type="Texture2D" uid="uid://c0qf0kovitsgw" path="res://art/objects/Items/farming-Plants-items.png" id="3_b11k6"]
 [ext_resource type="Texture2D" uid="uid://7xob54e5athu" path="res://art/objects/Items/items-spritesheet.png" id="4_tdvod"]
+[ext_resource type="Texture2D" uid="uid://bvxpw1kff126e" path="res://art/objects/Items/egg-items.png" id="6_tdvod"]
+[ext_resource type="Texture2D" uid="uid://bmsjuqkqay8o0" path="res://art/objects/Items/milk-items.png" id="7_4tgr1"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4tgr1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_b11k6"]
 atlas = ExtResource("2_lcq1t")
 region = Rect2(16, 16, 16, 16)
 
@@ -22,13 +24,29 @@ region = Rect2(16, 16, 16, 16)
 atlas = ExtResource("3_b11k6")
 region = Rect2(16, 64, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tgr1"]
+atlas = ExtResource("3_b11k6")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lcq1t"]
+atlas = ExtResource("3_b11k6")
+region = Rect2(16, 128, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_eqitx"]
 atlas = ExtResource("4_tdvod")
 region = Rect2(48, 176, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lmsk"]
+atlas = ExtResource("6_tdvod")
+region = Rect2(32, 0, 16, 16)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6o1n"]
 atlas = ExtResource("4_tdvod")
 region = Rect2(64, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqs55"]
+atlas = ExtResource("7_4tgr1")
+region = Rect2(0, 128, 16, 16)
 
 [node name="InventoryPanel" type="PanelContainer"]
 offset_right = 50.0
@@ -57,7 +75,7 @@ theme_type_variation = &"InventoryItemPanel"
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-texture = SubResource("AtlasTexture_4tgr1")
+texture = SubResource("AtlasTexture_b11k6")
 
 [node name="LogLabel" type="Label" parent="MarginContainer/VBoxContainer/Logs"]
 layout_mode = 2
@@ -120,6 +138,42 @@ size_flags_vertical = 8
 theme_type_variation = &"InventoryLabel"
 text = "0"
 
+[node name="Carrots" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(26, 32)
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Carrots"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_4tgr1")
+
+[node name="CarrotLabel" type="Label" parent="MarginContainer/VBoxContainer/Carrots"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"InventoryLabel"
+text = "0"
+
+[node name="Wheat" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(26, 32)
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Wheat"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_lcq1t")
+
+[node name="WheatLabel" type="Label" parent="MarginContainer/VBoxContainer/Wheat"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"InventoryLabel"
+text = "0"
+
 [node name="Eggs" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(26, 32)
 layout_mode = 2
@@ -138,6 +192,24 @@ size_flags_vertical = 8
 theme_type_variation = &"InventoryLabel"
 text = "0"
 
+[node name="AdvancedEggs" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(26, 32)
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/AdvancedEggs"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_0lmsk")
+
+[node name="AdvancedEggLabel" type="Label" parent="MarginContainer/VBoxContainer/AdvancedEggs"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"InventoryLabel"
+text = "0"
+
 [node name="Milk" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(26, 32)
 layout_mode = 2
@@ -150,6 +222,24 @@ size_flags_vertical = 0
 texture = SubResource("AtlasTexture_u6o1n")
 
 [node name="MilkLabel" type="Label" parent="MarginContainer/VBoxContainer/Milk"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"InventoryLabel"
+text = "0"
+
+[node name="AdvancedMilk" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(26, 32)
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/AdvancedMilk"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_uqs55")
+
+[node name="AdvancedMilkLabel" type="Label" parent="MarginContainer/VBoxContainer/AdvancedMilk"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8

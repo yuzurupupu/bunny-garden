@@ -8,6 +8,7 @@ enum Tools {
 	PlantCorn,
 	PlantTomato,
 	PlantCarrot,
+	PlantWheat
 }
 
 enum GrowthStates {

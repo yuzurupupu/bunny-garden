@@ -30,7 +30,6 @@ frame = 1
 [node name="GrowthCycleComponent" parent="." instance=ExtResource("5_q3ekf")]
 
 [node name="HurtComponent" parent="." instance=ExtResource("2_aphyd")]
-visible = false
 tool = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]

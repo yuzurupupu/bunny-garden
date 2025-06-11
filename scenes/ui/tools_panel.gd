@@ -5,6 +5,8 @@ extends PanelContainer
 @onready var tool_corn_seed: Button = $MarginContainer/HBoxContainer/ToolCornSeed
 @onready var tool_tomato_seed: Button = $MarginContainer/HBoxContainer/ToolTomatoSeed
 @onready var tool_carrot_seed: Button = $MarginContainer/HBoxContainer/ToolCarrotSeed
+@onready var tool_wheat_seed: Button = $MarginContainer/HBoxContainer/ToolWheatSeed
+
 
 func _ready()-> void:
 	ToolManager.enable_tool.connect(on_enable_tool_button)
@@ -23,6 +25,9 @@ func _ready()-> void:
 	
 	tool_carrot_seed.disabled = true
 	tool_carrot_seed.focus_mode = Control.FOCUS_NONE
+	
+	tool_wheat_seed.disabled = true
+	tool_wheat_seed.focus_mode = Control.FOCUS_NONE
 
 func _on_tool_axe_pressed() -> void:
 	ToolManager.select_tool(DataType.Tools.AxeWood)
@@ -48,6 +53,9 @@ func _on_tool_carrot_seed_pressed() -> void:
 	ToolManager.select_tool(DataType.Tools.PlantCarrot)
 	
 
+func _on_tool_wheat_seed_pressed() -> void:
+	ToolManager.select_tool(DataType.Tools.PlantWheat)
+	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("release_tool"):
 		ToolManager.select_tool(DataType.Tools.None)
@@ -56,6 +64,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		tool_corn_seed.release_focus()
 		tool_tilling.release_focus()
 		tool_tomato_seed.release_focus()
+		tool_wheat_seed.release_focus()
 		tool_watering_can.release_focus()
 		
 func on_enable_tool_button(tool: DataType.Tools) -> void:
@@ -78,3 +87,7 @@ func on_enable_tool_button(tool: DataType.Tools) -> void:
 	elif tool == DataType.Tools.PlantCarrot:
 		tool_carrot_seed.disabled = false
 		tool_carrot_seed.focus_mode = Control.FOCUS_ALL
+		
+	elif tool == DataType.Tools.PlantWheat:
+		tool_wheat_seed.disabled = false
+		tool_wheat_seed.focus_mode = Control.FOCUS_ALL

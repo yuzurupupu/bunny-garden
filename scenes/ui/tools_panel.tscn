@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ufcklwvy3m1p"]
+[gd_scene load_steps=15 format=3 uid="uid://ufcklwvy3m1p"]
 
 [ext_resource type="Theme" uid="uid://divq4klakmuwc" path="res://scenes/ui/game_ui_theme.tres" id="1_2yiqu"]
 [ext_resource type="Script" uid="uid://d04pp0lumyfgq" path="res://scenes/ui/tools_panel.gd" id="2_0jxvs"]
@@ -37,6 +37,10 @@ load_path = "res://.godot/imported/farming-Plants-items.png-ebde48ade61a5ede1bbb
 [sub_resource type="AtlasTexture" id="AtlasTexture_uel26"]
 atlas = SubResource("CompressedTexture2D_n1kta")
 region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jxvs"]
+atlas = ExtResource("3_0jxvs")
+region = Rect2(0, 128, 16, 16)
 
 [node name="ToolsPanel" type="PanelContainer"]
 offset_right = 58.0
@@ -99,9 +103,18 @@ theme_type_variation = &"ToolButton"
 icon = SubResource("AtlasTexture_uel26")
 icon_alignment = 1
 
+[node name="ToolWheatSeed" type="Button" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(26, 26)
+layout_mode = 2
+theme_type_variation = &"ToolButton"
+icon = SubResource("AtlasTexture_0jxvs")
+icon_alignment = 1
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolAxe" to="." method="_on_tool_axe_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTilling" to="." method="_on_tool_tilling_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWateringCan" to="." method="_on_tool_watering_can_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolCornSeed" to="." method="_on_tool_corn_seed_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolTomatoSeed" to="." method="_on_tool_tomato_seed_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/ToolCarrotSeed" to="." method="_on_tool_carrot_seed_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWheatSeed" to="." method="_on_tool_carrot_seed_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/ToolWheatSeed" to="." method="_on_tool_wheat_seed_pressed"]

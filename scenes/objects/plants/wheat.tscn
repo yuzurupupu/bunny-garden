@@ -1,0 +1,39 @@
+[gd_scene load_steps=10 format=3 uid="uid://mlbl2dkkv5nn"]
+
+[ext_resource type="Texture2D" uid="uid://dr0de6klgxvgd" path="res://art/objects/Items/Farming Plants.png" id="1_cfupu"]
+[ext_resource type="Script" uid="uid://b0rq2mqy36efv" path="res://scenes/objects/plants/wheat.gd" id="1_ye42y"]
+[ext_resource type="PackedScene" uid="uid://cucr6g132ee3r" path="res://scenes/objects/plants/watering_particles.tscn" id="2_0vyrn"]
+[ext_resource type="PackedScene" uid="uid://bg77lbhtbhn1u" path="res://scenes/objects/plants/flowering_particles.tscn" id="3_5j4he"]
+[ext_resource type="PackedScene" uid="uid://dkqok5ltlpkfo" path="res://scenes/objects/plants/growth_cycle_component.tscn" id="4_ye42y"]
+[ext_resource type="PackedScene" uid="uid://kbch56ljyk3k" path="res://scenes/component/hurt_component.tscn" id="5_bn3h6"]
+[ext_resource type="PackedScene" uid="uid://5lja3mesqock" path="res://scenes/component/save_data_component.tscn" id="6_5j4he"]
+[ext_resource type="Resource" uid="uid://ct1i1iur0lpp7" path="res://resources/scene_data_resource.tres" id="8_bn3h6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0xjf"]
+size = Vector2(18, 15)
+
+[node name="Wheat" type="Node2D"]
+script = ExtResource("1_ye42y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
+texture = ExtResource("1_cfupu")
+hframes = 5
+vframes = 15
+frame = 40
+
+[node name="WateringParticles" parent="." instance=ExtResource("2_0vyrn")]
+
+[node name="FloweringParticles" parent="." instance=ExtResource("3_5j4he")]
+
+[node name="GrowthCycleComponent" parent="." instance=ExtResource("4_ye42y")]
+
+[node name="HurtComponent" parent="." instance=ExtResource("5_bn3h6")]
+tool = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
+position = Vector2(-1, -2.5)
+shape = SubResource("RectangleShape2D_p0xjf")
+
+[node name="SaveDataComponent" parent="." instance=ExtResource("6_5j4he")]
+save_data_resoure = ExtResource("8_bn3h6")
