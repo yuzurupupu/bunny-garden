@@ -1,10 +1,13 @@
-[gd_scene load_steps=20 format=3 uid="uid://bwyrvr1bnw8wr"]
+[gd_scene load_steps=21 format=3 uid="uid://bwyrvr1bnw8wr"]
 
 [ext_resource type="Script" uid="uid://dptmgnl4qvng" path="res://scenes/objects/chest/chest.gd" id="1_umtkn"]
 [ext_resource type="Texture2D" uid="uid://rlj24oit8kga" path="res://art/tilesets/Building parts/Chest.png" id="1_yv7tv"]
 [ext_resource type="PackedScene" uid="uid://r8qjck4vbhg2" path="res://scenes/component/interactable_component.tscn" id="2_8pawo"]
 [ext_resource type="PackedScene" uid="uid://bhkwcprhia6sl" path="res://scenes/component/interactable_label_component.tscn" id="3_rqprm"]
 [ext_resource type="PackedScene" uid="uid://bjfu24rpo4i2j" path="res://scenes/component/feed_component.tscn" id="4_rqprm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_umtkn"]
+size = Vector2(16, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_44sq4"]
 atlas = ExtResource("1_yv7tv")
@@ -106,8 +109,13 @@ radius = 17.0294
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ayji6"]
 
-[node name="Chest" type="Node2D"]
+[node name="Chest" type="StaticBody2D"]
 script = ExtResource("1_umtkn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_umtkn")
+debug_color = Color(0.563384, 0.081425, 0.193301, 0.42)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_44sq4")
