@@ -6,7 +6,7 @@ extends StaticBody2D
 
 func _ready() -> void:
 	interactable_component.interactable_activated.connect(on_interactable_activated)
-	interactable_component.interactble_deactivated.connect(on_interactable_deactivated)
+	interactable_component.interactable_deactivated.connect(on_interactable_deactivated)
 	collision_layer = 1
 	
 func on_interactable_activated() -> void:
