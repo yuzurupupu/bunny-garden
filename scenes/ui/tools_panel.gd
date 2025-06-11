@@ -24,7 +24,7 @@ func _on_tool_corn_seed_pressed() -> void:
 
 
 func _on_tool_tomato_seed_pressed() -> void:
-	ToolManager.select_tool(DataType.Tools.PlantTomated)
+	ToolManager.select_tool(DataType.Tools.PlantTomato)
 
 
 func _on_tool_carrot_seed_pressed() -> void:
