@@ -114,7 +114,7 @@ game_menu={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogue/conversations/guide.dialogue", "res://dialogue/conversations/chest.dialogue", "res://dialogue/conversations/axe_guide.dialogue", "res://dialogue/conversations/trade.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogue/conversations/guide.dialogue", "res://dialogue/conversations/chest.dialogue", "res://dialogue/conversations/axe_guide.dialogue", "res://dialogue/conversations/trade.dialogue", "res://dialogue/conversations/chest_guide.dialogue")
 
 [layer_names]
 

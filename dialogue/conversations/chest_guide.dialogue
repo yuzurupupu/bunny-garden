@@ -1,0 +1,13 @@
+~ start
+
+Armand: This chest serves two noble purposes—feeding your animals and managing local trades.
+- Feeding animals?
+	Armand: Simply approach the chest while carrying wheat, carrots, tomatoes, or corn.
+	Armand: I shall ensure the chickens and cows are promptly fed.
+	Armand: In return, they’ll provide fresh eggs and milk for your efforts.
+- Trading goods?
+	Armand: Around the farm, you will notice several specialized chests.
+	Armand: Each accepts one kind of item—be it eggs, milk, logs, or stones—and exchanges it for gold.
+	Armand: Approach them with the goods, and the trade shall be swift and fair.
+
+=> END
