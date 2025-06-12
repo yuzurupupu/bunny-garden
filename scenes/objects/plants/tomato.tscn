@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://2oug3rmhw468"]
 
-[ext_resource type="Texture2D" uid="uid://dr0de6klgxvgd" path="res://art/objects/Items/Farming Plants.png" id="1_tixv0"]
+[ext_resource type="Texture2D" uid="uid://dr0de6klgxvgd" path="res://art/game/objects/Items/Farming Plants.png" id="1_tixv0"]
 [ext_resource type="Script" uid="uid://c6crw7d8q2ui8" path="res://scenes/objects/plants/tomato.gd" id="1_vn5rf"]
 [ext_resource type="PackedScene" uid="uid://cucr6g132ee3r" path="res://scenes/objects/plants/watering_particles.tscn" id="3_i4hd5"]
 [ext_resource type="PackedScene" uid="uid://bg77lbhtbhn1u" path="res://scenes/objects/plants/flowering_particles.tscn" id="4_huvgt"]

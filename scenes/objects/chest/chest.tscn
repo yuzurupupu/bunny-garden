@@ -1,7 +1,7 @@
 [gd_scene load_steps=21 format=3 uid="uid://bwyrvr1bnw8wr"]
 
 [ext_resource type="Script" uid="uid://dptmgnl4qvng" path="res://scenes/objects/chest/chest.gd" id="1_umtkn"]
-[ext_resource type="Texture2D" uid="uid://rlj24oit8kga" path="res://art/tilesets/Building parts/Chest.png" id="1_yv7tv"]
+[ext_resource type="Texture2D" uid="uid://rlj24oit8kga" path="res://art/game/tilesets/Building parts/Chest.png" id="1_yv7tv"]
 [ext_resource type="PackedScene" uid="uid://r8qjck4vbhg2" path="res://scenes/component/interactable_component.tscn" id="2_8pawo"]
 [ext_resource type="PackedScene" uid="uid://bhkwcprhia6sl" path="res://scenes/component/interactable_label_component.tscn" id="3_rqprm"]
 [ext_resource type="PackedScene" uid="uid://bjfu24rpo4i2j" path="res://scenes/component/feed_component.tscn" id="4_rqprm"]

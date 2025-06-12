@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bh7foljm6t52c"]
 
-[ext_resource type="Texture2D" uid="uid://sn1132cdrfaq" path="res://art/objects/Items/fruit-n-berries-items.png" id="1_nw8hv"]
+[ext_resource type="Texture2D" uid="uid://sn1132cdrfaq" path="res://art/game/objects/Items/fruit-n-berries-items.png" id="1_nw8hv"]
 [ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_llsc6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_llsc6"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://mlbl2dkkv5nn"]
 
-[ext_resource type="Texture2D" uid="uid://dr0de6klgxvgd" path="res://art/objects/Items/Farming Plants.png" id="1_cfupu"]
+[ext_resource type="Texture2D" uid="uid://dr0de6klgxvgd" path="res://art/game/objects/Items/Farming Plants.png" id="1_cfupu"]
 [ext_resource type="Script" uid="uid://b0rq2mqy36efv" path="res://scenes/objects/plants/wheat.gd" id="1_ye42y"]
 [ext_resource type="PackedScene" uid="uid://cucr6g132ee3r" path="res://scenes/objects/plants/watering_particles.tscn" id="2_0vyrn"]
 [ext_resource type="PackedScene" uid="uid://bg77lbhtbhn1u" path="res://scenes/objects/plants/flowering_particles.tscn" id="3_5j4he"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://74qp53lvr45i"]
 
-[ext_resource type="Texture2D" uid="uid://baq8eajqpai6x" path="res://art/objects/Mushrooms, Flowers, Stones.png" id="1_337no"]
+[ext_resource type="Texture2D" uid="uid://baq8eajqpai6x" path="res://art/game/objects/Mushrooms, Flowers, Stones.png" id="1_337no"]
 [ext_resource type="Shader" uid="uid://dnnpo8nkaxnyl" path="res://scenes/objects/rock/shake.gdshader" id="1_os7sx"]
 [ext_resource type="Script" uid="uid://cxjsqkfyrfui8" path="res://scenes/objects/rock/big_rock.gd" id="2_os7sx"]
 [ext_resource type="PackedScene" uid="uid://kbch56ljyk3k" path="res://scenes/component/hurt_component.tscn" id="2_vpih2"]

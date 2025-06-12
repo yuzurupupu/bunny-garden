@@ -15,6 +15,10 @@ run/main_scene="uid://csdmdkwru1tu1"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://836w846ed28"
+
 [autoload]
 
 ToolManager="*res://scripts/globals/tool_manager.gd"

@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://d228orla1uowl"]
 
 [ext_resource type="Script" uid="uid://bgehw2d1q2m8" path="res://scenes/houses/door.gd" id="1_act2a"]
-[ext_resource type="Texture2D" uid="uid://c5fv3kigppnbp" path="res://art/tilesets/Building parts/door animation sprites.png" id="1_bxi54"]
+[ext_resource type="Texture2D" uid="uid://c5fv3kigppnbp" path="res://art/game/tilesets/Building parts/door animation sprites.png" id="1_bxi54"]
 [ext_resource type="PackedScene" uid="uid://r8qjck4vbhg2" path="res://scenes/component/interactable_component.tscn" id="3_1ugum"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2dpp7"]

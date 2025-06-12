@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dybnxvni8g0fs"]
 
-[ext_resource type="Texture2D" uid="uid://baq8eajqpai6x" path="res://art/objects/Mushrooms, Flowers, Stones.png" id="1_pc11k"]
+[ext_resource type="Texture2D" uid="uid://baq8eajqpai6x" path="res://art/game/objects/Mushrooms, Flowers, Stones.png" id="1_pc11k"]
 [ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_o7ixd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o7ixd"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://daaik64jb43cx"]
 
-[ext_resource type="Texture2D" uid="uid://bvxpw1kff126e" path="res://art/objects/Items/egg-items.png" id="1_rjdtl"]
+[ext_resource type="Texture2D" uid="uid://bvxpw1kff126e" path="res://art/game/objects/Items/egg-items.png" id="1_rjdtl"]
 [ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_aswic"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l85h4"]

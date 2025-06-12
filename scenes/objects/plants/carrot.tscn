@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://qtyo3071kh6k"]
 
-[ext_resource type="Texture2D" uid="uid://dr0de6klgxvgd" path="res://art/objects/Items/Farming Plants.png" id="1_rpdvl"]
+[ext_resource type="Texture2D" uid="uid://dr0de6klgxvgd" path="res://art/game/objects/Items/Farming Plants.png" id="1_rpdvl"]
 [ext_resource type="Script" uid="uid://b1vv0x72oc71q" path="res://scenes/objects/plants/carrot.gd" id="1_tta0v"]
 [ext_resource type="PackedScene" uid="uid://cucr6g132ee3r" path="res://scenes/objects/plants/watering_particles.tscn" id="2_hdffw"]
 [ext_resource type="PackedScene" uid="uid://bg77lbhtbhn1u" path="res://scenes/objects/plants/flowering_particles.tscn" id="3_8e602"]

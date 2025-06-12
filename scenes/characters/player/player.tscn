@@ -1,6 +1,6 @@
 [gd_scene load_steps=173 format=3 uid="uid://dbqt1w87ujw4g"]
 
-[ext_resource type="Texture2D" uid="uid://b0vnaxj4v1q2" path="res://art/characters/Premium Charakter Spritesheet.png" id="1_7uws0"]
+[ext_resource type="Texture2D" uid="uid://b0vnaxj4v1q2" path="res://art/game/characters/Premium Charakter Spritesheet.png" id="1_7uws0"]
 [ext_resource type="Script" uid="uid://c74v0lm2hviyj" path="res://scenes/characters/player/player.gd" id="1_qd3e3"]
 [ext_resource type="Script" uid="uid://brxm3al3acs4a" path="res://scripts/state_machine/player_state_machine.gd" id="2_t61fv"]
 [ext_resource type="Script" uid="uid://cuo57oe0j3ucu" path="res://scenes/characters/player/idle_state.gd" id="3_686vu"]

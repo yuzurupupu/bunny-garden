@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://ct32uyyaxr38r"]
 
 [ext_resource type="Script" uid="uid://buajmxhbyicch" path="res://scenes/objects/plants/corn.gd" id="1_hgaca"]
-[ext_resource type="Texture2D" uid="uid://dr0de6klgxvgd" path="res://art/objects/Items/Farming Plants.png" id="1_hm4is"]
+[ext_resource type="Texture2D" uid="uid://dr0de6klgxvgd" path="res://art/game/objects/Items/Farming Plants.png" id="1_hm4is"]
 [ext_resource type="PackedScene" uid="uid://kbch56ljyk3k" path="res://scenes/component/hurt_component.tscn" id="2_aphyd"]
 [ext_resource type="PackedScene" uid="uid://cucr6g132ee3r" path="res://scenes/objects/plants/watering_particles.tscn" id="2_ofjf8"]
 [ext_resource type="PackedScene" uid="uid://bg77lbhtbhn1u" path="res://scenes/objects/plants/flowering_particles.tscn" id="3_ofjf8"]

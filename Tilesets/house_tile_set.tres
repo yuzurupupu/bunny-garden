@@ -1,8 +1,8 @@
 [gd_resource type="TileSet" load_steps=9 format=3 uid="uid://wqaunmq6ly8i"]
 
-[ext_resource type="Texture2D" uid="uid://1xtju2kch57v" path="res://art/tilesets/Building parts/Wooden_House_Walls_Tilset.png" id="1_0e3uf"]
-[ext_resource type="Texture2D" uid="uid://cygejepx1y3st" path="res://art/tilesets/Building parts/Basic_Furniture.png" id="2_juxxr"]
-[ext_resource type="Texture2D" uid="uid://rlj24oit8kga" path="res://art/tilesets/Building parts/Chest.png" id="3_s4u7f"]
+[ext_resource type="Texture2D" uid="uid://1xtju2kch57v" path="res://art/game/tilesets/Building parts/Wooden_House_Walls_Tilset.png" id="1_0e3uf"]
+[ext_resource type="Texture2D" uid="uid://cygejepx1y3st" path="res://art/game/tilesets/Building parts/Basic_Furniture.png" id="2_juxxr"]
+[ext_resource type="Texture2D" uid="uid://rlj24oit8kga" path="res://art/game/tilesets/Building parts/Chest.png" id="3_s4u7f"]
 [ext_resource type="PackedScene" uid="uid://d228orla1uowl" path="res://scenes/houses/door.tscn" id="4_7tasb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_juxxr"]

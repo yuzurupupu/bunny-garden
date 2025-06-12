@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ccf3dcfqfpq4c"]
 
-[ext_resource type="Texture2D" uid="uid://bmsjuqkqay8o0" path="res://art/objects/Items/milk-items.png" id="1_x4jv8"]
+[ext_resource type="Texture2D" uid="uid://bmsjuqkqay8o0" path="res://art/game/objects/Items/milk-items.png" id="1_x4jv8"]
 [ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_b551d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_apcg2"]

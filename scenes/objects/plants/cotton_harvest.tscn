@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bq4tw4o8pse7n"]
 
-[ext_resource type="Texture2D" uid="uid://c0qf0kovitsgw" path="res://art/objects/Items/farming-Plants-items.png" id="1_44pmm"]
+[ext_resource type="Texture2D" uid="uid://c0qf0kovitsgw" path="res://art/game/objects/Items/farming-Plants-items.png" id="1_44pmm"]
 [ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_3h22p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3h22p"]
