@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d2soawam3odw"
+path="res://.godot/imported/axe_guide.dialogue-a02f8454c87657a61ce1e7129290728f.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/axe_guide.dialogue"
+dest_files=["res://.godot/imported/axe_guide.dialogue-a02f8454c87657a61ce1e7129290728f.tres"]
+
+[params]
+
+defaults=true

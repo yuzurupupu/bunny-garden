@@ -1,10 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://bk3s0j1jrcvx1"]
+[gd_scene load_steps=11 format=3 uid="uid://bk3s0j1jrcvx1"]
 
 [ext_resource type="Texture2D" uid="uid://cl8p6aead6l1j" path="res://art/game/objects/Trees, stumps and bushes.png" id="1_1ouo2"]
-[ext_resource type="Script" uid="uid://dskicjinucp5g" path="res://scenes/objects/tree/big_tree.gd" id="2_8kafe"]
+[ext_resource type="Script" uid="uid://dskicjinucp5g" path="res://scenes/objects/tree/tree.gd" id="2_8kafe"]
 [ext_resource type="PackedScene" uid="uid://kbch56ljyk3k" path="res://scenes/component/hurt_component.tscn" id="2_xmv4s"]
 [ext_resource type="PackedScene" uid="uid://deeqsbfgt4kbn" path="res://scenes/component/damage_component.tscn" id="3_8kafe"]
 [ext_resource type="Shader" uid="uid://c2ykc3ydqc8hp" path="res://scenes/objects/tree/shake.gdshader" id="5_mt2w1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mt2w1"]
+shader = ExtResource("5_mt2w1")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ygx4o"]
 atlas = ExtResource("1_1ouo2")
@@ -23,9 +28,11 @@ shader_parameter/shake_intensity = 0.0
 shader_parameter/shake_speed = 20.0
 
 [node name="BigTree" type="Sprite2D"]
+material = SubResource("ShaderMaterial_mt2w1")
 position = Vector2(0, -18)
 texture = SubResource("AtlasTexture_ygx4o")
 script = ExtResource("2_8kafe")
+log_count = 3
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

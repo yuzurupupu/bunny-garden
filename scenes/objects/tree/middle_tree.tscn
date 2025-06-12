@@ -2,9 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://cl8p6aead6l1j" path="res://art/game/objects/Trees, stumps and bushes.png" id="1_bavxv"]
 [ext_resource type="Shader" uid="uid://c2ykc3ydqc8hp" path="res://scenes/objects/tree/shake.gdshader" id="1_sfgbo"]
-[ext_resource type="Script" uid="uid://c655y1uk5804i" path="res://scenes/objects/tree/middle_tree.gd" id="2_b8b0g"]
 [ext_resource type="PackedScene" uid="uid://kbch56ljyk3k" path="res://scenes/component/hurt_component.tscn" id="2_t3oo1"]
 [ext_resource type="PackedScene" uid="uid://deeqsbfgt4kbn" path="res://scenes/component/damage_component.tscn" id="3_b8b0g"]
+[ext_resource type="Script" uid="uid://dskicjinucp5g" path="res://scenes/objects/tree/tree.gd" id="3_sfgbo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fd08t"]
 resource_local_to_scene = true
@@ -26,7 +26,8 @@ size = Vector2(18, 23)
 material = SubResource("ShaderMaterial_fd08t")
 position = Vector2(0, -11)
 texture = SubResource("AtlasTexture_enyo8")
-script = ExtResource("2_b8b0g")
+script = ExtResource("3_sfgbo")
+log_count = 2
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

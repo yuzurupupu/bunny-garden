@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://dnnpo8nkaxnyl" path="res://scenes/objects/rock/shake.gdshader" id="1_4fi2u"]
 [ext_resource type="Texture2D" uid="uid://baq8eajqpai6x" path="res://art/game/objects/Mushrooms, Flowers, Stones.png" id="1_mx0s7"]
-[ext_resource type="Script" uid="uid://bj6ia6ejykk7d" path="res://scenes/objects/rock/small_rock.gd" id="2_4fi2u"]
+[ext_resource type="Script" uid="uid://cxjsqkfyrfui8" path="res://scenes/objects/rock/rock.gd" id="3_4fi2u"]
 [ext_resource type="PackedScene" uid="uid://kbch56ljyk3k" path="res://scenes/component/hurt_component.tscn" id="3_bgi6x"]
 [ext_resource type="PackedScene" uid="uid://deeqsbfgt4kbn" path="res://scenes/component/damage_component.tscn" id="4_wboee"]
 
@@ -26,7 +26,7 @@ radius = 6.0
 material = SubResource("ShaderMaterial_bgi6x")
 position = Vector2(0, -5)
 texture = SubResource("AtlasTexture_l0mkr")
-script = ExtResource("2_4fi2u")
+script = ExtResource("3_4fi2u")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

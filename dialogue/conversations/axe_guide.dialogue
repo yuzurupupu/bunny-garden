@@ -1,0 +1,24 @@
+~ start_axe_guide
+
+Armand: [[Hey there|Hello|Hi]], Eve! Ready to do some harvesting?
+Eve: Sure, what should I do?
+
+Armand: First, click on the axe icon in your toolbar to equip it.
+Armand: Then walk close to a tree or a rock and press Enter.
+Armand: If you’ve got the axe equipped, you’ll chop it down.
+Eve: And what happens after I chop them?
+
+Armand: You’ll be able to collect logs from trees, and stones from rocks.
+Armand: Pretty useful for crafting later on.
+
+- Got it! I’ll try chopping a tree.
+	Eve: On it. Time to collect some wood.
+	Armand: Good luck! Big trees drop more logs.
+- I’ll try breaking some rocks instead.
+	Eve: Rocks won’t stand a chance.
+	Armand: That’s the spirit. Look for stones near cliffs or hills.
+- Remind me again => start_axe_guide
+- I’m done for now => END
+
+Armand: Let me know if you need more guidance.
+=> END

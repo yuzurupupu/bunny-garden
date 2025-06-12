@@ -34,6 +34,7 @@ source_geometry_mode = 2
 y_sort_enabled = true
 
 [node name="OnTheFarmMusic" parent="." instance=ExtResource("1_bahl2")]
+autoplay = true
 
 [node name="SaveLevelDataComponent" parent="." instance=ExtResource("1_wtwp4")]
 script = ExtResource("2_iwr0g")
