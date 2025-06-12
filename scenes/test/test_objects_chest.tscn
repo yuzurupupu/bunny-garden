@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bxjm15aqum64k"]
+[gd_scene load_steps=14 format=4 uid="uid://bxjm15aqum64k"]
 
 [ext_resource type="TileSet" uid="uid://b5wltpek07xm" path="res://Tilesets/game_tile_set.tres" id="1_af2xx"]
 [ext_resource type="PackedScene" uid="uid://dbqt1w87ujw4g" path="res://scenes/characters/player/player.tscn" id="2_6mh8a"]
@@ -8,6 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://bwyrvr1bnw8wr" path="res://scenes/objects/chest/chest.tscn" id="4_8gm8l"]
 [ext_resource type="PackedScene" uid="uid://do73ovf8sq83t" path="res://scenes/objects/animal_products/normal_egg.tscn" id="4_72fee"]
 [ext_resource type="PackedScene" uid="uid://du4pv8ye06u8n" path="res://scenes/objects/animal_products/normal_milk.tscn" id="7_72fee"]
+[ext_resource type="PackedScene" uid="uid://dvlsatotrd1o" path="res://scenes/objects/chest/chest_trade.tscn" id="9_euhem"]
+[ext_resource type="PackedScene" uid="uid://bm8oqmtabpt4o" path="res://scenes/objects/animal_products/pink_egg.tscn" id="10_bevfo"]
+[ext_resource type="PackedScene" uid="uid://neyvi2t00jyx" path="res://scenes/objects/animal_products/pink_milk.tscn" id="11_vrbr5"]
+[ext_resource type="PackedScene" uid="uid://dijr8sqh4iqxs" path="res://scenes/objects/rock/small_stone.tscn" id="12_3k34x"]
+[ext_resource type="PackedScene" uid="uid://cnjgi7i8plhgn" path="res://scenes/objects/tree/log.tscn" id="13_d58h2"]
 
 [node name="TestSceneObjectsChest" type="Node2D"]
 
@@ -35,8 +40,20 @@ position = Vector2(291, 489)
 [node name="TomatoHarvest2" parent="HarvestCollectables" instance=ExtResource("2_46xaf")]
 position = Vector2(286, 343)
 
+[node name="PinkEgg" parent="HarvestCollectables" instance=ExtResource("10_bevfo")]
+position = Vector2(596, 384)
+
+[node name="PinkMilk" parent="HarvestCollectables" instance=ExtResource("11_vrbr5")]
+position = Vector2(587, 429)
+
+[node name="SmallStone" parent="HarvestCollectables" instance=ExtResource("12_3k34x")]
+position = Vector2(515, 391)
+
+[node name="Log" parent="HarvestCollectables" instance=ExtResource("13_d58h2")]
+position = Vector2(526, 442)
+
 [node name="player" parent="." instance=ExtResource("2_6mh8a")]
-position = Vector2(378, 404)
+position = Vector2(500, 448)
 
 [node name="GameScreen" parent="." instance=ExtResource("3_co5xr")]
 
@@ -49,3 +66,15 @@ output_reward_scenes = Array[PackedScene]([ExtResource("7_72fee")])
 position = Vector2(413, 338)
 dialogue_start_command = "start_chicken_pasture_box"
 output_reward_scenes = Array[PackedScene]([ExtResource("4_72fee")])
+
+[node name="LogChestTrade" parent="." instance=ExtResource("9_euhem")]
+position = Vector2(545, 335)
+dialogue_start_command = "start_sell_box_log"
+sell_item_scenes = ExtResource("13_d58h2")
+sell_item_name = "Log"
+
+[node name="StoneChestTrade" parent="." instance=ExtResource("9_euhem")]
+position = Vector2(438, 438)
+dialogue_start_command = "start_sell_box_stone"
+sell_item_scenes = ExtResource("12_3k34x")
+sell_item_name = "Stone"

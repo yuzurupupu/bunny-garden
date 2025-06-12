@@ -9,6 +9,7 @@ extends PanelContainer
 @onready var egg_label: Label = $MarginContainer/VBoxContainer/Eggs/EggLabel
 @onready var milk_label: Label = $MarginContainer/VBoxContainer/Milk/MilkLabel
 @onready var advanced_milk_label: Label = $MarginContainer/VBoxContainer/AdvancedMilk/AdvancedMilkLabel
+@onready var gold_label: Label = $MarginContainer/VBoxContainer/Gold/GoldLabel
 
 
 func _ready() -> void:
@@ -46,3 +47,6 @@ func on_inventory_changed() -> void:
 		
 	if inventory.has("advanced_milk"):
 		advanced_milk_label.text = str(inventory["advanced_milk"])
+	
+	if inventory.has("gold"):
+		gold_label.text = str(inventory["gold"])

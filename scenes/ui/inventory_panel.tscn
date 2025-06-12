@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://48g72f0qtcos"]
+[gd_scene load_steps=20 format=3 uid="uid://48g72f0qtcos"]
 
 [ext_resource type="Theme" uid="uid://divq4klakmuwc" path="res://scenes/ui/game_ui_theme.tres" id="1_ta3uk"]
 [ext_resource type="Script" uid="uid://dy3a5cifk1u8r" path="res://scenes/ui/inventory_panel.gd" id="2_b11k6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://7xob54e5athu" path="res://art/game/objects/Items/items-spritesheet.png" id="4_tdvod"]
 [ext_resource type="Texture2D" uid="uid://bvxpw1kff126e" path="res://art/game/objects/Items/egg-items.png" id="6_tdvod"]
 [ext_resource type="Texture2D" uid="uid://bmsjuqkqay8o0" path="res://art/game/objects/Items/milk-items.png" id="7_4tgr1"]
+[ext_resource type="Texture2D" uid="uid://rwe1o1gjv4ha" path="res://art/ui/Sprite sheet for Basic Pack.png" id="8_4tgr1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b11k6"]
 atlas = ExtResource("2_lcq1t")
@@ -47,6 +48,10 @@ region = Rect2(64, 32, 16, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_uqs55"]
 atlas = ExtResource("7_4tgr1")
 region = Rect2(0, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vni4r"]
+atlas = ExtResource("8_4tgr1")
+region = Rect2(628, 115, 7, 10)
 
 [node name="InventoryPanel" type="PanelContainer"]
 offset_right = 50.0
@@ -240,6 +245,25 @@ size_flags_vertical = 0
 texture = SubResource("AtlasTexture_uqs55")
 
 [node name="AdvancedMilkLabel" type="Label" parent="MarginContainer/VBoxContainer/AdvancedMilk"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"InventoryLabel"
+text = "0"
+
+[node name="Gold" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(26, 32)
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Gold"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_vni4r")
+
+[node name="GoldLabel" type="Label" parent="MarginContainer/VBoxContainer/Gold"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8

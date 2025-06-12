@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4y73apwgfm2h"]
+
+[ext_resource type="Texture2D" uid="uid://rwe1o1gjv4ha" path="res://art/ui/Sprite sheet for Basic Pack.png" id="1_x57uj"]
+[ext_resource type="PackedScene" uid="uid://cu0y0w7je0hti" path="res://scenes/component/collectable_component.tscn" id="2_vxefw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxefw"]
+atlas = ExtResource("1_x57uj")
+region = Rect2(627, 98, 9, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sxt47"]
+radius = 7.0
+
+[node name="GoldCoin" type="Sprite2D"]
+texture = SubResource("AtlasTexture_vxefw")
+
+[node name="CollectableComponent" parent="." instance=ExtResource("2_vxefw")]
+collectable_name = "gold"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
+shape = SubResource("CircleShape2D_sxt47")

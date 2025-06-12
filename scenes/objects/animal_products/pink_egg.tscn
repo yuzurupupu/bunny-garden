@@ -15,7 +15,7 @@ y_sort_enabled = true
 texture = SubResource("AtlasTexture_e06hu")
 
 [node name="CollectableComponent" parent="." instance=ExtResource("2_ecda4")]
-collectable_name = "pink egg"
+collectable_name = "advanced_egg"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollectableComponent"]
 shape = SubResource("CircleShape2D_m48ix")

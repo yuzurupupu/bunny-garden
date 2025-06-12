@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://do35wb8bdlggw"
+path="res://.godot/imported/trade.dialogue-72aae6fdd9c7086a9081f043c5656fe8.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/trade.dialogue"
+dest_files=["res://.godot/imported/trade.dialogue-72aae6fdd9c7086a9081f043c5656fe8.tres"]
+
+[params]
+
+defaults=true

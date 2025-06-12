@@ -1,0 +1,83 @@
+~ start_sell_box_stone
+
+Stone Crate: [[Heavy load?|Need to lighten up?|Rock-bottom prices!]]
+Stone Crate: I’ll trade your stones for solid gold—deal?
+- Sell stones
+	Eve: Turning rocks into riches!
+	do GameDialogueManager.action_feed_animals()
+- Keep them
+	Eve: Might need these for construction later.
+
+=> END
+
+~ start_sell_box_log
+
+Lumber Depot: [[Timber!|Log jam?|Wood you believe it?]]
+Lumber Depot: Got logs? I’ve got gold.
+- Sell logs
+	Eve: Chopping my way to wealth!
+	do GameDialogueManager.action_feed_animals()
+- Not now
+	Eve: Better save these for crafting.
+
+=> END
+
+~ start_sell_box_milk
+
+Dairy Stand: [[Fresh milk!|Got milk?|Moo-ney maker!]]
+Dairy Stand: Swap that milk for coins that shine?
+- Sell milk
+	Eve: Bottling up profits!
+	do GameDialogueManager.action_feed_animals()
+- No thanks
+	Eve: The kids still need their calcium.
+
+=> END
+
+~ start_sell_box_egg
+
+Poultry Market: [[Egg-celent deal!|Shell we trade?|Crackin' offer!]]
+Poultry Market: Turn those eggs into golden yolks?
+- Sell eggs
+	Eve: Scrambling up some cash!
+	do GameDialogueManager.action_feed_animals()
+- Maybe later
+	Eve: I'm saving these for breakfast.
+
+=> END
+
+~ start_sell_box_advanced_milk
+
+Premium Dairy: [[Luxury lactose!|Gold-top quality!|Aged to perfection!]]
+Premium Dairy: Premium milk for premium gold—sound fair?
+- Sell premium milk
+	Eve: Only the finest returns!
+	do GameDialogueManager.action_feed_animals()
+- Keep it
+	Eve: This is for something special.
+
+=> END
+
+~ start_sell_box_advanced_egg
+
+Gourmet Poultry: [[Golden eggs!|Royal clutch!|Prized specimens!]]
+Gourmet Poultry: These belong in the royal vault—care to trade?
+- Sell premium eggs
+	Eve: Cracking the luxury market!
+	do GameDialogueManager.action_feed_animals()
+- Decline
+	Eve: These are for master chefs only.
+
+=> END
+
+~ start_sell_box_generic
+
+Trading Post: [[What've you got?|Looking to sell?|Trade winds blowing!]]
+Trading Post: I deal in stone, logs, dairy, and poultry—what’ll it be?
+- {sell_item_name} for gold
+	Eve: Let’s make it official!
+	do GameDialogueManager.action_feed_animals()
+- Changed my mind
+	Eve: Another time then.
+
+=> END
