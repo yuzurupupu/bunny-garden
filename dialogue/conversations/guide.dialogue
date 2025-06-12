@@ -1,24 +1,32 @@
 ~ start
 
-Armand: [[Hi|Hello|Howdy]], little one. It's good to finally meet you!
-Armand: So you're the grandbunny who inherited this farm from Grandpa Flopsy, huh? He spoke fondly of you.
+Armand: [[Hi|Hello|Howdy]], little one. It's good to finally meet you!  
+Armand: So you're the grandbunny who inherited this farm from Grandpa Flopsy, huh? He always said you'd return one day.  
 Armand: Welcome home. 🏡
 
-Armand: The farm has been quiet for a while, but the cows and chickens are still here... and they're getting hungry!
-Armand: You'll need to grow some crops to feed them and get things back in shape.
+Armand: The farm's been quiet for a while, but the cows and chickens stayed. They're getting hungry though — they'll need fresh crops to eat!
 
-Armand: Grandpa left you a few tilled plots near the barn — those soft, dark ones over there.
-Armand: But don’t worry, you can also create new farmland anywhere by using your hoe on grassy ground.
+Armand: Grandpa left you a few tilled plots near the barn — those soft, dark ones. You can also use your hoe on grassy ground to make more farmland.
 
-Armand: I’ve got some seeds to help you start your first crop. Ready to hop into action?
+Armand: I’ve got some seeds for you to start with. Just plant them in the soil, and don’t forget to water them every day — crops won't grow if they stay dry!  
+Armand: When they bloom and bear fruit, you’ll be able to harvest them and use them to feed your animals.
+
+Armand: You can also chop trees and break rocks for wood and stone
+Armand: Those materials, along with harvested crops, can be sold for coins in the trading stall at the top-right corner of the farm.
+
+Armand: Oh, and don’t be surprised if a mysterious merchant visits the stall each evening — they’re always looking for something special...
+
+Armand: If you’re tired, just go inside your house and rest for the night. A new day brings fresh chances!
+
+Armand: So — ready to hop into action?
 
 - Take crop seeds  
 	Eve: Yeah! Grandpa would be proud. I’ll grow the best carrots in the valley!  
 	do GameDialogueManager.action_give_crop_seeds()  
-	Armand: That’s the spirit! Start with the plots near the barn. I’ll check in later to see your progress.
+	Armand: That’s the spirit! Start near the barn. And remember: water every day and rest when you need to.
 
 - No, I’m not ready yet  
 	Eve: Maybe later... It’s a lot to take in right now.  
-	Armand: That’s okay, little bun. Farming is a marathon, not a sprint. Let me know when you’re ready.
+	Armand: That’s okay, little bun. Farming is a marathon, not a sprint. Just let me know when you’re ready.
 
 => END

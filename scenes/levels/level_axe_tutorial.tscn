@@ -1,20 +1,18 @@
 [gd_scene load_steps=7 format=4 uid="uid://cwds7piflklof"]
 
 [ext_resource type="PackedScene" uid="uid://tlfg6wi75lar" path="res://audio/music/on_the_farm_music.tscn" id="1_3qf66"]
-[ext_resource type="PackedScene" uid="uid://uore2we1l00u" path="res://scenes/ui/game_screen.tscn" id="2_3jkxa"]
 [ext_resource type="TileSet" uid="uid://b5wltpek07xm" path="res://Tilesets/game_tile_set.tres" id="2_3nomi"]
 [ext_resource type="PackedScene" uid="uid://beytdklax5h36" path="res://scenes/component/save_level_data_component.tscn" id="2_r7ysc"]
 [ext_resource type="PackedScene" uid="uid://cqbbxbn62p420" path="res://scenes/characters/npc/guide_tree_and_rock.tscn" id="4_3nomi"]
-[ext_resource type="PackedScene" uid="uid://dbqt1w87ujw4g" path="res://scenes/characters/player/player.tscn" id="4_l17sn"]
+[ext_resource type="PackedScene" uid="uid://uore2we1l00u" path="res://scenes/ui/game_screen.tscn" id="5_3qf66"]
+[ext_resource type="PackedScene" uid="uid://dbqt1w87ujw4g" path="res://scenes/characters/player/player.tscn" id="6_r7ysc"]
 
-[node name="LevelTreeTutorial" type="Node2D"]
+[node name="LevelAxeTutorial" type="Node2D"]
 y_sort_enabled = true
 
 [node name="OnTheFarmMusic" parent="." instance=ExtResource("1_3qf66")]
 
 [node name="SaveLevelDataComponent" parent="." instance=ExtResource("2_r7ysc")]
-
-[node name="GameScreen" parent="." instance=ExtResource("2_3jkxa")]
 
 [node name="GameTileMap" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -49,5 +47,7 @@ tile_set = ExtResource("2_3nomi")
 [node name="GuideTreeAndRock" parent="." instance=ExtResource("4_3nomi")]
 position = Vector2(574, 302)
 
-[node name="player" parent="." instance=ExtResource("4_l17sn")]
-position = Vector2(621, 299)
+[node name="GameScreen" parent="." instance=ExtResource("5_3qf66")]
+
+[node name="player" parent="." instance=ExtResource("6_r7ysc")]
+position = Vector2(611, 308)

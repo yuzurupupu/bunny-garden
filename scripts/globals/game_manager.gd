@@ -5,9 +5,27 @@ func _unhandled_input(event: InputEvent)-> void:
 	if event.is_action_pressed("game_menu"):
 		show_game_menu_screen()
 
-func start_game() -> void:
+func start_level1() -> void:
 	SceneManager.load_main_scene_container()
 	SceneManager.load_level("Level1")
+	SaveGameManager.load_game()
+	SaveGameManager.allow_save_game = true
+	
+func start_level2() -> void:
+	SceneManager.load_main_scene_container()
+	SceneManager.load_level("Level2")
+	SaveGameManager.load_game()
+	SaveGameManager.allow_save_game = true
+	
+func start_level3() -> void:
+	SceneManager.load_main_scene_container()
+	SceneManager.load_level("Level3")
+	SaveGameManager.load_game()
+	SaveGameManager.allow_save_game = true
+	
+func start_level4() -> void:
+	SceneManager.load_main_scene_container()
+	SceneManager.load_level("Level4")
 	SaveGameManager.load_game()
 	SaveGameManager.allow_save_game = true
 	

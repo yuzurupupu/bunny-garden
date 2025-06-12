@@ -1,11 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://cysv0r122q64k"]
+[gd_scene load_steps=10 format=3 uid="uid://cysv0r122q64k"]
 
 [ext_resource type="PackedScene" uid="uid://ymeq5f68oy28" path="res://scenes/component/mouse_cursor_component.tscn" id="1_rt2n2"]
 [ext_resource type="PackedScene" uid="uid://cmx50eo37s20c" path="res://scenes/component/day_and_night_cycle_component.tscn" id="1_ybdc1"]
 [ext_resource type="PackedScene" uid="uid://uore2we1l00u" path="res://scenes/ui/game_screen.tscn" id="2_3ulyp"]
 [ext_resource type="Texture2D" uid="uid://cp27to65vmg8t" path="res://art/ui/Triangle Mouse icon 1.png" id="2_c16ls"]
-[ext_resource type="PackedScene" uid="uid://b326wfj0jhmg" path="res://scenes/levels/level_1.tscn" id="2_q46b8"]
+[ext_resource type="PackedScene" uid="uid://b326wfj0jhmg" path="res://scenes/levels/level_full.tscn" id="2_q46b8"]
+[ext_resource type="PackedScene" uid="uid://cwds7piflklof" path="res://scenes/levels/level_axe_tutorial.tscn" id="4_c1pb6"]
 [ext_resource type="PackedScene" uid="uid://dbqt1w87ujw4g" path="res://scenes/characters/player/player.tscn" id="4_pu3yx"]
+[ext_resource type="PackedScene" uid="uid://bik8jvs7xwv48" path="res://scenes/levels/level_chest_tutorial.tscn" id="5_6wevv"]
+[ext_resource type="PackedScene" uid="uid://jxyoqaphoxjo" path="res://scenes/levels/level_animal_tutorial.tscn" id="6_e1cbu"]
 
 [node name="MainScene" type="Node"]
 
@@ -13,7 +16,6 @@
 cursor_component_texture = ExtResource("2_c16ls")
 
 [node name="DayAndNightCycleComponent" parent="." instance=ExtResource("1_ybdc1")]
-visible = false
 
 [node name="GameRoot" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -21,7 +23,13 @@ y_sort_enabled = true
 [node name="LevelRoot" type="Node2D" parent="GameRoot"]
 y_sort_enabled = true
 
-[node name="Level1" parent="GameRoot/LevelRoot" instance=ExtResource("2_q46b8")]
+[node name="LevelAxeTutorial" parent="GameRoot/LevelRoot" instance=ExtResource("4_c1pb6")]
+
+[node name="LevelChestTutorial" parent="GameRoot/LevelRoot" instance=ExtResource("5_6wevv")]
+
+[node name="LevelAnimalTutorial" parent="GameRoot/LevelRoot" instance=ExtResource("6_e1cbu")]
+
+[node name="LevelFull" parent="GameRoot/LevelRoot" instance=ExtResource("2_q46b8")]
 
 [node name="player" parent="GameRoot" instance=ExtResource("4_pu3yx")]
 position = Vector2(1907, 864)
