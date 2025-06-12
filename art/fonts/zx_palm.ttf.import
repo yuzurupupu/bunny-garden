@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bhjqgiogyicil"
-path="res://.godot/imported/zx_palm.ttf-40b6fd6b3c56b033451c0931bfb3e76a.fontdata"
+path="res://.godot/imported/zx_palm.ttf-1865fe9ca8458be23ae58e5485d08715.fontdata"
 
 [deps]
 
-source_file="res://fonts/zx_palm.ttf"
-dest_files=["res://.godot/imported/zx_palm.ttf-40b6fd6b3c56b033451c0931bfb3e76a.fontdata"]
+source_file="res://art/fonts/zx_palm.ttf"
+dest_files=["res://.godot/imported/zx_palm.ttf-1865fe9ca8458be23ae58e5485d08715.fontdata"]
 
 [params]
 

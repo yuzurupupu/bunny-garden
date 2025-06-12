@@ -1,6 +1,6 @@
 [gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://sb1ehes3sies"]
 
-[ext_resource type="FontFile" uid="uid://bhjqgiogyicil" path="res://fonts/zx_palm.ttf" id="1_adbxd"]
+[ext_resource type="FontFile" uid="uid://bhjqgiogyicil" path="res://art/fonts/zx_palm.ttf" id="1_adbxd"]
 
 [resource]
 base_font = ExtResource("1_adbxd")

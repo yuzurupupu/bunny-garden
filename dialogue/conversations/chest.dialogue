@@ -3,10 +3,10 @@
 Pasture Box: [[Hi|Hello|Howdy]], the cows look a little restless — they're getting hungry.
 Pasture Box: Would you like to give them some feed now?
 - Yes
-	Marlow: Of course! Happy cows, happy farm.
+	Eve: Of course! Happy cows, happy farm.
 	do GameDialogueManager.action_feed_animals()
 - No
-	Marlow: Hmm, not now. I’ve got enough milk stocked up.
+	Eve: Hmm, not now. I’ve got enough milk stocked up.
 
 => END
 
@@ -15,9 +15,9 @@ Pasture Box: Would you like to give them some feed now?
 Pasture Box: [[Hi|Hello|Hey there]], the chickens are clucking louder than usual — sounds like mealtime!
 Pasture Box: Would you like to feed your chickens now?
 - Yes
-	Marlow: Definitely! Time for a chicken feast.
+	Eve: Definitely! Time for a chicken feast.
 	do GameDialogueManager.action_feed_animals()
 - No
-	Marlow: Not today. I’ve got plenty of eggs already.
+	Eve: Not today. I’ve got plenty of eggs already.
 
 => END

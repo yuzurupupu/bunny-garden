@@ -2,7 +2,7 @@ class_name CropsCursorComponent
 extends Node
 
 @export var tilled_soil_tilemap_layer: TileMapLayer
-@onready var player: Player = get_tree().get_first_node_in_group("player")
+var player: Player
 
 var crop_scenes := {
 	DataType.Tools.PlantCorn: preload("res://scenes/objects/plants/corn.tscn"),
@@ -18,6 +18,10 @@ var local_cell_position: Vector2
 var distance: float
 const PLANT_RANGE: float = 20.0
 const POSITION_TOLERANCE: float = 1.0
+
+func _ready() -> void:
+	await get_tree().process_frame
+	player = get_tree().get_first_node_in_group("player")
 
 func _unhandled_input(event: InputEvent) -> void:
 	if ToolManager.selected_tool == DataType.Tools.TillGround and event.is_action_pressed("remove_dirt"):

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhkwcprhia6sl"]
 
 [ext_resource type="Texture2D" uid="uid://rwe1o1gjv4ha" path="res://art/ui/Sprite sheet for Basic Pack.png" id="1_nmoj8"]
-[ext_resource type="FontVariation" uid="uid://sb1ehes3sies" path="res://fonts/zx_palm_variation.tres" id="2_cyv22"]
+[ext_resource type="FontVariation" uid="uid://sb1ehes3sies" path="res://art/fonts/zx_palm_variation.tres" id="2_cyv22"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mulbi"]
 atlas = ExtResource("1_nmoj8")

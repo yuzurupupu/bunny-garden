@@ -1,29 +1,24 @@
 ~ start
 
-Marlow: [[Hi|Hello|Howdy]], little one. It's good to finally meet you!
-Marlow: So you're the grandbunny who inherited this farm from Grandpa Flopsy, huh? He spoke fondly of you.
-Marlow: Welcome home. 🏡
+Armand: [[Hi|Hello|Howdy]], little one. It's good to finally meet you!
+Armand: So you're the grandbunny who inherited this farm from Grandpa Flopsy, huh? He spoke fondly of you.
+Armand: Welcome home. 🏡
 
-Marlow: The farm has been quiet for a while, but the cows and chickens are still here... and they're getting hungry!
-Marlow: You'll need to grow some crops to feed them and get things back in shape.
+Armand: The farm has been quiet for a while, but the cows and chickens are still here... and they're getting hungry!
+Armand: You'll need to grow some crops to feed them and get things back in shape.
 
-Marlow: Grandpa left you a few tilled plots near the barn — those soft, dark ones over there.
-Marlow: But don’t worry, you can also create new farmland anywhere by using your hoe on grassy ground.
+Armand: Grandpa left you a few tilled plots near the barn — those soft, dark ones over there.
+Armand: But don’t worry, you can also create new farmland anywhere by using your hoe on grassy ground.
 
-Marlow: Here's how to get started:
-Marlow: 🪓 Tilling: Equip your hoe, stand near grass or soil, and press the **action button** to till.
-Marlow: 💧 Watering: Equip your watering can, face the tilled soil, and press use to water it.
-Marlow: 🌱 Growth: Water your crops daily. In a few days, they’ll grow and be ready to harvest!
-
-Marlow: I’ve got some seeds to help you start your first crop. Ready to hop into action?
+Armand: I’ve got some seeds to help you start your first crop. Ready to hop into action?
 
 - Take crop seeds  
-	Teemo: Yeah! Grandpa would be proud. I’ll grow the best carrots in the valley!  
+	Eve: Yeah! Grandpa would be proud. I’ll grow the best carrots in the valley!  
 	do GameDialogueManager.action_give_crop_seeds()  
-	Marlow: That’s the spirit! Start with the plots near the barn. I’ll check in later to see your progress.
+	Armand: That’s the spirit! Start with the plots near the barn. I’ll check in later to see your progress.
 
 - No, I’m not ready yet  
-	Teemo: Maybe later... It’s a lot to take in right now.  
-	Marlow: That’s okay, little bun. Farming is a marathon, not a sprint. Let me know when you’re ready.
+	Eve: Maybe later... It’s a lot to take in right now.  
+	Armand: That’s okay, little bun. Farming is a marathon, not a sprint. Let me know when you’re ready.
 
 => END
