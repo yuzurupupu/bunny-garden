@@ -1,14 +1,16 @@
-[gd_scene load_steps=56 format=3 uid="uid://dqwkhwx8rl12j"]
+[gd_scene load_steps=59 format=3 uid="uid://dqwkhwx8rl12j"]
 
 [ext_resource type="Texture2D" uid="uid://flhlrwcjp4xb" path="res://art/game/animals/Chicken/chicken default.png" id="1_be5x3"]
-[ext_resource type="Script" uid="uid://dcgero4odfdrp" path="res://scenes/characters/chicken/chicken.gd" id="1_r6a33"]
+[ext_resource type="Script" uid="uid://dcgero4odfdrp" path="res://scenes/characters/npc/chicken/chicken.gd" id="1_r6a33"]
 [ext_resource type="Script" uid="uid://brxm3al3acs4a" path="res://scripts/state_machine/player_state_machine.gd" id="2_awcwn"]
-[ext_resource type="Script" uid="uid://dx26woxqytf5r" path="res://scenes/characters/chicken/idle_state.gd" id="3_31inw"]
-[ext_resource type="Script" uid="uid://oj81g01da6w5" path="res://scenes/characters/chicken/walk_state.gd" id="4_31inw"]
-[ext_resource type="Script" uid="uid://bk2gar0muulpl" path="res://scenes/characters/chicken/observe_state.gd" id="6_wh5lc"]
-[ext_resource type="Script" uid="uid://bbr0g0rwrpbvg" path="res://scenes/characters/chicken/sleep_state.gd" id="7_vmevo"]
-[ext_resource type="Script" uid="uid://ckutcjvh6041" path="res://scenes/characters/chicken/jump_state.gd" id="8_ft40v"]
+[ext_resource type="Script" uid="uid://dx26woxqytf5r" path="res://scenes/characters/npc/idle_state.gd" id="3_31inw"]
+[ext_resource type="PackedScene" uid="uid://r8qjck4vbhg2" path="res://scenes/component/interactable_component.tscn" id="3_cis33"]
+[ext_resource type="Script" uid="uid://oj81g01da6w5" path="res://scenes/characters/npc/walk_state.gd" id="4_31inw"]
+[ext_resource type="Script" uid="uid://bk2gar0muulpl" path="res://scenes/characters/npc/observe_state.gd" id="6_wh5lc"]
+[ext_resource type="Script" uid="uid://bbr0g0rwrpbvg" path="res://scenes/characters/npc/sleep_state.gd" id="7_vmevo"]
+[ext_resource type="Script" uid="uid://ckutcjvh6041" path="res://scenes/characters/npc/jump_state.gd" id="8_ft40v"]
 [ext_resource type="PackedScene" uid="uid://6uai1exeh8k3" path="res://audio/sfx/chicken_cluck_mutiple_sfx.tscn" id="9_ft40v"]
+[ext_resource type="Script" uid="uid://dl6i48yj4cmpo" path="res://scenes/characters/npc/like_state.gd" id="9_svq72"]
 [ext_resource type="PackedScene" uid="uid://clwu5pw8cpi4" path="res://scenes/component/audio_play_timer_component.tscn" id="10_wxs42"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_asyyu"]
@@ -350,6 +352,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lns6"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_asyyu"]
 radius = 5.0
 
@@ -361,10 +365,14 @@ script = ExtResource("1_r6a33")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_j5yl6")
-animation = &"eat"
+animation = &"like"
 autoplay = "idle"
-frame = 4
-frame_progress = 0.413033
+
+[node name="InteractableComponent" parent="." instance=ExtResource("3_cis33")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_0lns6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -5)
@@ -405,9 +413,14 @@ script = ExtResource("8_ft40v")
 character = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
+[node name="Like" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d")]
+script = ExtResource("9_svq72")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
 [node name="ChickenCluckMutipleSFX" parent="." instance=ExtResource("9_ft40v")]
 
 [node name="AudioPlayTimerComponent" parent="." node_paths=PackedStringArray("audio_stream_player_2D") instance=ExtResource("10_wxs42")]
-wait_time = 5.0
+wait_time = 20.0
 autostart = true
 audio_stream_player_2D = NodePath("../ChickenCluckMutipleSFX")

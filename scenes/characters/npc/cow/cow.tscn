@@ -1,12 +1,16 @@
-[gd_scene load_steps=49 format=3 uid="uid://bqfc48t4va21j"]
+[gd_scene load_steps=54 format=3 uid="uid://bqfc48t4va21j"]
 
-[ext_resource type="Script" uid="uid://dlhymeq6cpssb" path="res://scenes/characters/cow/cow.gd" id="1_ilrem"]
+[ext_resource type="Script" uid="uid://dlhymeq6cpssb" path="res://scenes/characters/npc/cow/cow.gd" id="1_ilrem"]
 [ext_resource type="Texture2D" uid="uid://cxfmn6ngwgh6i" path="res://art/game/animals/Cow/Pink cow animation sprites.png" id="1_kc4rr"]
-[ext_resource type="Script" uid="uid://dx26woxqytf5r" path="res://scenes/characters/chicken/idle_state.gd" id="2_14ngq"]
-[ext_resource type="Script" uid="uid://oj81g01da6w5" path="res://scenes/characters/chicken/walk_state.gd" id="3_ilrem"]
+[ext_resource type="Script" uid="uid://dx26woxqytf5r" path="res://scenes/characters/npc/idle_state.gd" id="2_14ngq"]
+[ext_resource type="Script" uid="uid://oj81g01da6w5" path="res://scenes/characters/npc/walk_state.gd" id="3_ilrem"]
 [ext_resource type="Script" uid="uid://brxm3al3acs4a" path="res://scripts/state_machine/player_state_machine.gd" id="3_j7g5r"]
+[ext_resource type="PackedScene" uid="uid://r8qjck4vbhg2" path="res://scenes/component/interactable_component.tscn" id="3_v7wcs"]
+[ext_resource type="Script" uid="uid://dl6i48yj4cmpo" path="res://scenes/characters/npc/like_state.gd" id="6_c760y"]
 [ext_resource type="PackedScene" uid="uid://cayj7umfcwg18" path="res://audio/sfx/cow_moo_sfx.tscn" id="6_cgos1"]
 [ext_resource type="PackedScene" uid="uid://clwu5pw8cpi4" path="res://scenes/component/audio_play_timer_component.tscn" id="7_gsrfl"]
+[ext_resource type="Script" uid="uid://bbr0g0rwrpbvg" path="res://scenes/characters/npc/sleep_state.gd" id="8_ttkhi"]
+[ext_resource type="Script" uid="uid://bk2gar0muulpl" path="res://scenes/characters/npc/observe_state.gd" id="9_l7tih"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sa3qd"]
 atlas = ExtResource("1_kc4rr")
@@ -88,22 +92,6 @@ region = Rect2(128, 224, 32, 32)
 atlas = ExtResource("1_kc4rr")
 region = Rect2(160, 224, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ys2lp"]
-atlas = ExtResource("1_kc4rr")
-region = Rect2(0, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y8r1e"]
-atlas = ExtResource("1_kc4rr")
-region = Rect2(32, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6gqrt"]
-atlas = ExtResource("1_kc4rr")
-region = Rect2(64, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1iwwa"]
-atlas = ExtResource("1_kc4rr")
-region = Rect2(96, 128, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5fhqj"]
 atlas = ExtResource("1_kc4rr")
 region = Rect2(0, 64, 32, 32)
@@ -131,6 +119,22 @@ region = Rect2(160, 64, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5yxev"]
 atlas = ExtResource("1_kc4rr")
 region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys2lp"]
+atlas = ExtResource("1_kc4rr")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8r1e"]
+atlas = ExtResource("1_kc4rr")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gqrt"]
+atlas = ExtResource("1_kc4rr")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1iwwa"]
+atlas = ExtResource("1_kc4rr")
+region = Rect2(96, 128, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_itnd0"]
 atlas = ExtResource("1_kc4rr")
@@ -248,23 +252,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ys2lp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y8r1e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6gqrt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1iwwa")
-}],
-"loop": true,
-"name": &"sleep",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_5fhqj")
 }, {
 "duration": 1.0,
@@ -286,7 +273,24 @@ animations = [{
 "texture": SubResource("AtlasTexture_5yxev")
 }],
 "loop": true,
-"name": &"up_and_down",
+"name": &"observe",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys2lp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8r1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gqrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1iwwa")
+}],
+"loop": true,
+"name": &"sleep",
 "speed": 5.0
 }, {
 "frames": [{
@@ -319,6 +323,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ttkhi"]
+size = Vector2(29, 20)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_j7g5r"]
 radius = 7.07107
 
@@ -330,8 +337,14 @@ script = ExtResource("1_ilrem")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13)
 sprite_frames = SubResource("SpriteFrames_kfyyi")
-animation = &"like"
+animation = &"drink"
 autoplay = "idle"
+
+[node name="InteractableComponent" parent="." instance=ExtResource("3_v7wcs")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableComponent"]
+position = Vector2(0.5, -8)
+shape = SubResource("RectangleShape2D_ttkhi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -7)
@@ -343,24 +356,39 @@ navigation_layers = 2
 path_postprocessing = 1
 avoidance_enabled = true
 
-[node name="StateMachince" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("3_j7g5r")
 initial_node_state = NodePath("Idle")
 
-[node name="Idle" type="Node" parent="StateMachince" node_paths=PackedStringArray("character", "animated_sprite_2d")]
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d")]
 script = ExtResource("2_14ngq")
 character = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 
-[node name="Walk" type="Node" parent="StateMachince" node_paths=PackedStringArray("character", "animated_sprite_2d", "navigation_agent_2d")]
+[node name="Walk" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d", "navigation_agent_2d")]
 script = ExtResource("3_ilrem")
 character = NodePath("../..")
 animated_sprite_2d = NodePath("../../AnimatedSprite2D")
 navigation_agent_2d = NodePath("../../NavigationAgent2D")
 
+[node name="Like" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d")]
+script = ExtResource("6_c760y")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Sleep" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d")]
+script = ExtResource("8_ttkhi")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
+[node name="Observe" type="Node" parent="StateMachine" node_paths=PackedStringArray("character", "animated_sprite_2d")]
+script = ExtResource("9_l7tih")
+character = NodePath("../..")
+animated_sprite_2d = NodePath("../../AnimatedSprite2D")
+
 [node name="CowMooSFX" parent="." instance=ExtResource("6_cgos1")]
 
 [node name="AudioPlayTimerComponent" parent="." node_paths=PackedStringArray("audio_stream_player_2D") instance=ExtResource("7_gsrfl")]
-wait_time = 20.0
+wait_time = 30.0
 autostart = true
 audio_stream_player_2D = NodePath("../CowMooSFX")

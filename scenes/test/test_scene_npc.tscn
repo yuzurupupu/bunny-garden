@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=4 uid="uid://ccjkd6mbq67ca"]
+[gd_scene load_steps=10 format=4 uid="uid://ccjkd6mbq67ca"]
 
 [ext_resource type="TileSet" uid="uid://b5wltpek07xm" path="res://Tilesets/game_tile_set.tres" id="1_bqioi"]
 [ext_resource type="PackedScene" uid="uid://dbqt1w87ujw4g" path="res://scenes/characters/player/player.tscn" id="2_58wy5"]
-[ext_resource type="PackedScene" uid="uid://bqfc48t4va21j" path="res://scenes/characters/cow/cow.tscn" id="3_bqioi"]
-[ext_resource type="PackedScene" uid="uid://dqwkhwx8rl12j" path="res://scenes/characters/chicken/chicken.tscn" id="4_58wy5"]
+[ext_resource type="PackedScene" uid="uid://bqfc48t4va21j" path="res://scenes/characters/npc/cow/cow.tscn" id="3_bqioi"]
+[ext_resource type="PackedScene" uid="uid://dqwkhwx8rl12j" path="res://scenes/characters/npc/chicken/chicken.tscn" id="4_58wy5"]
+[ext_resource type="PackedScene" uid="uid://bwyrvr1bnw8wr" path="res://scenes/objects/chest/chest.tscn" id="5_htlfi"]
+[ext_resource type="PackedScene" uid="uid://du4pv8ye06u8n" path="res://scenes/objects/animal_products/normal_milk.tscn" id="6_dls8l"]
+[ext_resource type="PackedScene" uid="uid://do73ovf8sq83t" path="res://scenes/objects/animal_products/normal_egg.tscn" id="7_qafwe"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_g2g2v"]
 vertices = PackedVector2Array(353.188, 444.859, 311.242, 423.344, 325, 427.094, 394.547, 420.258, 402.523, 421.711, 339.609, 199.219, 347.289, 198.352, 346.68, 218, 325, 389.531, 467.609, 199.219, 471.102, 198.828, 472.93, 388.672, 374.297, 311, 373.297, 298, 373.32, 298, 396.063, 391.508, 346.68, 298, 347.109, 298, 346.609, 311, 347.18, 218, 346.68, 234, 347.18, 234, 346.68, 250, 347.18, 250, 346.68, 266, 347.18, 266, 346.68, 282, 347.18, 282, 372.82, 282, 373.32, 282, 372.82, 266, 373.32, 266, 372.82, 250, 373.32, 250, 372.82, 234, 373.32, 234, 372.82, 218, 373.32, 218, 372.719, 199.094, 379.539, 198.328, 247.969, 390.867, 247.063, 198.828, 251.539, 198.328, 254.852, 197.313, 259.609, 199.219, 251.172, 392.508, 267.539, 198.328, 253.156, 392.719, 255.656, 393.852, 259.047, 391.711, 269.141, 392.711, 270.852, 197.313, 275.609, 199.219, 271.656, 393.852, 283.539, 198.328, 275.047, 391.711, 285.141, 392.711, 286.852, 197.313, 291.609, 199.219, 287.656, 393.852, 299.539, 198.328, 291.047, 391.711, 301.141, 392.711, 302.852, 197.313, 307.609, 199.219, 304.922, 394.43, 315.539, 198.328, 307.602, 393.398, 318.852, 197.313, 323.609, 199.219, 331.539, 198.328, 334.852, 197.313, 461.641, 197.68, 463.867, 197.719, 459.539, 198.328, 451.609, 199.219, 462.758, 393.438, 461.133, 392.711, 446.453, 197.43, 447.203, 197.438, 451.047, 391.711, 443.539, 198.328, 435.609, 199.219, 430.852, 197.297, 427.547, 198.328, 419.609, 199.219, 447.656, 393.852, 445.141, 392.711, 414.852, 197.313, 435.047, 391.711, 411.539, 198.328, 403.609, 199.219, 431.656, 393.852, 429.141, 392.711, 398.852, 197.313, 419.047, 391.711, 395.539, 198.328, 387.609, 199.219, 415.289, 394.094, 412.742, 393.172, 382.852, 197.313)
@@ -35,46 +38,60 @@ tile_set = ExtResource("1_bqioi")
 tile_set = ExtResource("1_bqioi")
 
 [node name="Overgrowth" type="TileMapLayer" parent="GameTileMap"]
+tile_set = ExtResource("1_bqioi")
 
 [node name="Objects" type="TileMapLayer" parent="GameTileMap" groups=["navigation_polygon_source_geometry_group"]]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAOABkABgABAAIAAAAOABgABgAAAAEAAAAOABcABgAAAAEAAAAOABYABgAAAAEAAAAOABUABgAAAAEAAAAOABQABgAAAAEAAAAOABMABgAAAAEAAAAOABIABgAAAAEAAAAOABEABgAAAAEAAAAOABAABgAAAAEAAAAOAA8ABgAAAAEAAAAOAA4ABgAAAAEAAAAOAA0ABgAAAAEAAAAOAAwABgAAAAEAAAAOAAsABgABAAAAAAAeAAsABgADAAAAAAAdAAsABgACAAMAAAAcAAsABgACAAMAAAAbAAsABgACAAMAAAAaAAsABgACAAMAAAAZAAsABgACAAMAAAAYAAsABgACAAMAAAAXAAsABgACAAMAAAAWAAsABgACAAAAAAAVAAsABgACAAMAAAAUAAsABgACAAMAAAATAAsABgACAAMAAAASAAsABgACAAMAAAARAAsABgACAAMAAAAQAAsABgACAAMAAAAPAAsABgACAAMAAAAeABkABgADAAIAAAAeABgABgAAAAEAAAAeABcABgAAAAEAAAAeABYABgAAAAEAAAAeABUABgAAAAEAAAAeABQABgAAAAEAAAAeABMABgAAAAEAAAAeABIABgAAAAEAAAAeABEABgAAAAEAAAAeABAABgAAAAEAAAAeAA8ABgAAAAEAAAAeAA4ABgAAAAEAAAAeAA0ABgAAAAEAAAAeAAwABgAAAAEAAAAWABIABgAAAAIAAAAWABEABgAAAAEAAAAWABAABgAAAAEAAAAWAA8ABgAAAAEAAAAWAA4ABgAAAAEAAAAWAA0ABgAAAAEAAAAWAAwABgAAAAEAAAATABkABgADAAMAAAASABkABgACAAMAAAARABkABgACAAMAAAAQABkABgACAAMAAAAPABkABgACAAMAAAAdABkABgACAAMAAAAcABkABgACAAMAAAAbABkABgACAAMAAAAaABkABgACAAMAAAAZABkABgABAAMAAAAyAAsABgADAAAAAAAxAAsABgACAAMAAAAwAAsABgACAAMAAAAvAAsABgACAAMAAAAuAAsABgACAAMAAAAtAAsABgACAAMAAAAsAAsABgACAAMAAAArAAsABgACAAMAAAAqAAsABgACAAMAAAApAAsABgACAAMAAAAoAAsABgACAAMAAAAnAAsABgACAAMAAAAmAAsABgACAAMAAAAlAAsABgACAAMAAAAkAAsABgABAAAAAAAyABgABgAAAAEAAAAyABcABgAAAAEAAAAyABYABgAAAAEAAAAyABUABgAAAAEAAAAyABQABgAAAAEAAAAyABMABgAAAAEAAAAyABIABgADAAIAAAAyABEABgAAAAEAAAAyABAABgAAAAEAAAAyAA8ABgAAAAEAAAAyAA4ABgAAAAEAAAAyAA0ABgAAAAEAAAAyAAwABgAAAAEAAAAxABIABgACAAMAAAAwABIABgACAAMAAAAvABIABgACAAMAAAAuABIABgACAAMAAAAtABIABgACAAMAAAAsABIABgACAAMAAAArABIABgABAAMAAAAkABkABgABAAIAAAAlABkABgACAAMAAAAmABkABgACAAMAAAAnABkABgACAAMAAAAoABkABgACAAMAAAApABkABgACAAMAAAAqABkABgACAAMAAAArABkABgACAAMAAAAsABkABgACAAMAAAAtABkABgACAAMAAAAuABkABgACAAMAAAAvABkABgACAAMAAAAwABkABgACAAMAAAAxABkABgACAAMAAAAyABkABgADAAEAAAAkABMABgAAAAIAAAAkABIABgAAAAEAAAAkABEABgAAAAEAAAAkABAABgAAAAEAAAAkAA8ABgAAAAEAAAAkAA4ABgAAAAEAAAAkAA0ABgAAAAEAAAAkAAwABgAAAAEAAAAkABcABgAAAAAAAAAkABgABgAAAAEAAAA=")
 tile_set = ExtResource("1_bqioi")
 
-[node name="player" parent="." instance=ExtResource("2_58wy5")]
-position = Vector2(475, 480)
+[node name="Animals" type="Node2D" parent="."]
 
-[node name="Cows" type="Node2D" parent="."]
+[node name="Cows" type="Node2D" parent="Animals"]
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Cows"]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Animals/Cows"]
+visible = false
 navigation_polygon = SubResource("NavigationPolygon_g2g2v")
 navigation_layers = 2
 
-[node name="Cow" parent="Cows" instance=ExtResource("3_bqioi")]
+[node name="Cow" parent="Animals/Cows" instance=ExtResource("3_bqioi")]
 position = Vector2(299, 236)
 
-[node name="Cow2" parent="Cows" instance=ExtResource("3_bqioi")]
+[node name="Cow2" parent="Animals/Cows" instance=ExtResource("3_bqioi")]
 position = Vector2(291, 299)
 
-[node name="Cow3" parent="Cows" instance=ExtResource("3_bqioi")]
+[node name="Cow3" parent="Animals/Cows" instance=ExtResource("3_bqioi")]
 position = Vector2(429, 240)
 
-[node name="Cow4" parent="Cows" instance=ExtResource("3_bqioi")]
+[node name="Cow4" parent="Animals/Cows" instance=ExtResource("3_bqioi")]
 position = Vector2(425, 318)
 
-[node name="Chickens" type="Node2D" parent="."]
+[node name="Chickens" type="Node2D" parent="Animals"]
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Chickens"]
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="Animals/Chickens"]
 navigation_polygon = SubResource("NavigationPolygon_bqioi")
 
-[node name="Chicken" parent="Chickens" instance=ExtResource("4_58wy5")]
+[node name="Chicken" parent="Animals/Chickens" instance=ExtResource("4_58wy5")]
 position = Vector2(646, 281)
 
-[node name="Chicken2" parent="Chickens" instance=ExtResource("4_58wy5")]
+[node name="Chicken2" parent="Animals/Chickens" instance=ExtResource("4_58wy5")]
 position = Vector2(713, 240)
 
-[node name="Chicken3" parent="Chickens" instance=ExtResource("4_58wy5")]
+[node name="Chicken3" parent="Animals/Chickens" instance=ExtResource("4_58wy5")]
 position = Vector2(769, 359)
 
-[node name="Chicken4" parent="Chickens" instance=ExtResource("4_58wy5")]
+[node name="Chicken4" parent="Animals/Chickens" instance=ExtResource("4_58wy5")]
 position = Vector2(692, 362)
+
+[node name="player" parent="." instance=ExtResource("2_58wy5")]
+position = Vector2(475, 480)
+
+[node name="CowPastureBox" parent="." instance=ExtResource("5_htlfi")]
+position = Vector2(294, 443)
+dialogue_start_command = "start_cow_pasture_box"
+output_reward_scenes = Array[PackedScene]([ExtResource("6_dls8l")])
+
+[node name="ChickenPastureBox" parent="." instance=ExtResource("5_htlfi")]
+position = Vector2(555, 377)
+dialogue_start_command = "start_chicken_pasture_box"
+output_reward_scenes = Array[PackedScene]([ExtResource("7_qafwe")])

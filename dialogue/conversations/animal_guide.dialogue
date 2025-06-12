@@ -1,0 +1,10 @@
+~ start
+Armand: Hello, Farmer! Ready to care for the animals?
+Armand: You can feed them using the chest nearby.
+Armand: The more you interact with them, the better the rewards.
+- How do I feed them?
+	Armand: Just place food like corn or tomato in the chest.
+- What kind of rewards?
+	Armand: Eggs, milk... and special ones if they really like you.
+- End the conversation => END
+=> END

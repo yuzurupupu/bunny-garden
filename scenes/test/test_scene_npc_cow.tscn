@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://b5wltpek07xm" path="res://Tilesets/game_tile_set.tres" id="1_txxqc"]
 [ext_resource type="PackedScene" uid="uid://dbqt1w87ujw4g" path="res://scenes/characters/player/player.tscn" id="2_rep6j"]
-[ext_resource type="PackedScene" uid="uid://bqfc48t4va21j" path="res://scenes/characters/cow/cow.tscn" id="3_txxqc"]
+[ext_resource type="PackedScene" uid="uid://bqfc48t4va21j" path="res://scenes/characters/npc/cow/cow.tscn" id="3_txxqc"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_6nbhr"]
 vertices = PackedVector2Array(628.781, 314.133, 587.727, 439.953, 411.141, 373.5, 428.227, 264.672, 528.25, 192.578)

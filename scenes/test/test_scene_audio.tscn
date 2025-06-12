@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://tlfg6wi75lar" path="res://audio/music/on_the_farm_music.tscn" id="1_8p348"]
 [ext_resource type="TileSet" uid="uid://b5wltpek07xm" path="res://Tilesets/game_tile_set.tres" id="1_guo5b"]
 [ext_resource type="PackedScene" uid="uid://dbqt1w87ujw4g" path="res://scenes/characters/player/player.tscn" id="2_8p348"]
-[ext_resource type="PackedScene" uid="uid://dqwkhwx8rl12j" path="res://scenes/characters/chicken/chicken.tscn" id="4_7sbfe"]
-[ext_resource type="PackedScene" uid="uid://bqfc48t4va21j" path="res://scenes/characters/cow/cow.tscn" id="5_6tngo"]
+[ext_resource type="PackedScene" uid="uid://dqwkhwx8rl12j" path="res://scenes/characters/npc/chicken/chicken.tscn" id="4_7sbfe"]
+[ext_resource type="PackedScene" uid="uid://bqfc48t4va21j" path="res://scenes/characters/npc/cow/cow.tscn" id="5_6tngo"]
 
 [node name="TestSceneAudio" type="Node2D"]
 

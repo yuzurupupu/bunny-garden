@@ -2,10 +2,10 @@
 
 [ext_resource type="TileSet" uid="uid://b5wltpek07xm" path="res://Tilesets/game_tile_set.tres" id="1_8rij1"]
 [ext_resource type="Script" uid="uid://16ueer1lkk15" path="res://scenes/ui/game_menu_background.gd" id="1_uqfut"]
-[ext_resource type="PackedScene" uid="uid://dqwkhwx8rl12j" path="res://scenes/characters/chicken/chicken.tscn" id="2_hj03e"]
+[ext_resource type="PackedScene" uid="uid://dqwkhwx8rl12j" path="res://scenes/characters/npc/chicken/chicken.tscn" id="2_hj03e"]
 [ext_resource type="PackedScene" uid="uid://b6baulipgvud5" path="res://scenes/characters/npc/guide.tscn" id="2_y2gy7"]
 [ext_resource type="PackedScene" uid="uid://dbqt1w87ujw4g" path="res://scenes/characters/player/player.tscn" id="3_uqfut"]
-[ext_resource type="PackedScene" uid="uid://bqfc48t4va21j" path="res://scenes/characters/cow/cow.tscn" id="3_wjrxi"]
+[ext_resource type="PackedScene" uid="uid://bqfc48t4va21j" path="res://scenes/characters/npc/cow/cow.tscn" id="3_wjrxi"]
 
 [node name="GameMenuBackground" type="Node2D"]
 script = ExtResource("1_uqfut")

@@ -5,6 +5,7 @@ var ballon_scene = preload("res://dialogue/game_dialogue_ballon.tscn")
 var corn_harvest_scene = preload("res://scenes/objects/plants/corn_havest.tscn")
 var tomato_harvest_scene = preload("res://scenes/objects/plants/tomato_harvest.tscn")
 var carrot_harvest_scene = preload("res://scenes/objects/plants/carrot_harvest.tscn")
+var wheat_harvest_scene = preload("res://scenes/objects/plants/wheat_harvest.tscn")
 
 @onready var interactable_component: InteractbaleComponent = $InteractableComponent
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -12,10 +13,13 @@ var carrot_harvest_scene = preload("res://scenes/objects/plants/carrot_harvest.t
 @onready var reward_marker: Marker2D = $RewardMarker
 @onready var interactable_label_component: Control = $InteractableLabelComponent
 
+@export var animals: Node2D
 @export var dialogue_start_command: String
 @export var food_drop_height:int = 40
 @export var reward_output_radius: int = 20
 @export var output_reward_scenes: Array[PackedScene] =[]
+@export var advanced_egg_scene: PackedScene
+@export var advanced_milk_scene: PackedScene
 
 var in_range: bool
 var is_chest_open: bool
@@ -56,6 +60,7 @@ func on_feed_the_animals() -> void:
 		trigger_feed_harvest("corn", corn_harvest_scene)
 		trigger_feed_harvest("tomato", tomato_harvest_scene)
 		trigger_feed_harvest("carrot", carrot_harvest_scene)
+		trigger_feed_harvest("wheat", wheat_harvest_scene)
 		
 		
 func trigger_feed_harvest(inventory_item: String,scene: Resource) -> void:
@@ -86,11 +91,34 @@ func on_food_received(area: Area2D) -> void:
 	call_deferred("add_reward_scene")
 	
 func add_reward_scene() -> void:
+	var total_like_count := 0
+
+	for animal in animals.get_children():
+		if animal is NPC:
+			total_like_count += animal.like_count
+			
+	print("Total Like: ", total_like_count)
+	
+	var is_advanced_reward := total_like_count >= 5
+
 	for scene in output_reward_scenes:
-		var reward_scene:Node2D = scene.instantiate()
+		var final_scene = scene
+
+		if is_advanced_reward:
+			if scene == preload("res://scenes/objects/animal_products/normal_milk.tscn") and advanced_milk_scene:
+				final_scene = advanced_milk_scene
+			elif scene == preload("res://scenes/objects/animal_products/normal_egg.tscn") and advanced_egg_scene:
+				final_scene = advanced_egg_scene
+
+		var reward_scene: Node2D = final_scene.instantiate()
 		var reward_position: Vector2 = get_random_position_in_circle(reward_marker.global_position, reward_output_radius)
-		reward_scene.global_position =reward_position
+		reward_scene.global_position = reward_position
 		get_tree().root.add_child(reward_scene)
+
+	for animal in animals.get_children():
+		if animal is NPC:
+			animal.like_count -= 1
+
 		
 func get_random_position_in_circle(center: Vector2, radius: int) -> Vector2i:
 	var angle = randf()* TAU

@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://cu2a5tvwq0kdu"
+path="res://.godot/imported/animal_guide.dialogue-1a099eb544b98be073c0c0ebb8514a02.tres"
+
+[deps]
+
+source_file="res://dialogue/conversations/animal_guide.dialogue"
+dest_files=["res://.godot/imported/animal_guide.dialogue-1a099eb544b98be073c0c0ebb8514a02.tres"]
+
+[params]
+
+defaults=true
