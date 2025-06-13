@@ -4,6 +4,9 @@ extends Node
 @export var tilled_soil_tilemap_layer: TileMapLayer
 var player: Player
 
+const PLANT_RANGE := 20.0
+const POSITION_TOLERANCE := 1.0
+
 var crop_scenes := {
 	DataType.Tools.PlantCorn: preload("res://scenes/objects/plants/corn.tscn"),
 	DataType.Tools.PlantTomato: preload("res://scenes/objects/plants/tomato.tscn"),
@@ -16,23 +19,22 @@ var cell_position: Vector2i
 var cell_source_id: int
 var local_cell_position: Vector2
 var distance: float
-const PLANT_RANGE: float = 20.0
-const POSITION_TOLERANCE: float = 1.0
 
 func _ready() -> void:
 	await get_tree().process_frame
+	
 	player = get_tree().get_first_node_in_group("player")
 
 func _unhandled_input(event: InputEvent) -> void:
+	if player == null or !is_instance_valid(tilled_soil_tilemap_layer):
+		return
+	
 	if ToolManager.selected_tool == DataType.Tools.TillGround and event.is_action_pressed("remove_dirt"):
 		process_cell(true)
-	elif ToolManager.selected_tool in crop_scenes.keys() and event.is_action_pressed("hit"):
+	elif ToolManager.selected_tool in crop_scenes and event.is_action_pressed("hit"):
 		process_cell(false)
 
 func process_cell(remove: bool) -> void:
-	if !is_instance_valid(tilled_soil_tilemap_layer) or player == null:
-		return
-
 	get_cell_under_mouse()
 	if distance > PLANT_RANGE:
 		return
@@ -50,11 +52,14 @@ func get_cell_under_mouse() -> void:
 	distance = player.global_position.distance_to(local_cell_position)
 
 func add_crop() -> void:
-	var crop_fields = get_parent().find_child("CropFields")
-	if crop_fields == null or has_crop_at_position(crop_fields, local_cell_position):
+	var crop_fields = get_parent().get_node_or_null("CropFields")
+	if crop_fields == null:
 		return
 
-	var crop_scene = crop_scenes.get(ToolManager.selected_tool, null)
+	if has_crop_at_position(crop_fields, local_cell_position):
+		return
+
+	var crop_scene = crop_scenes.get(ToolManager.selected_tool)
 	if crop_scene == null:
 		return
 
@@ -63,7 +68,7 @@ func add_crop() -> void:
 	crop_fields.add_child(crop_instance)
 
 func remove_crop() -> void:
-	var crop_fields = get_parent().find_child("CropFields")
+	var crop_fields = get_parent().get_node_or_null("CropFields")
 	if crop_fields == null:
 		return
 

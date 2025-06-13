@@ -27,7 +27,7 @@ func _on_physics_process(_delta: float) -> void:
 	pass
 
 func _on_next_transitions() -> void:
-	pass # 交由 like_timer 控制
+	pass
 
 func _on_like_timeout() -> void:
-	transition.emit("Idle") # 回到 Idle 状态
+	transition.emit("Idle")

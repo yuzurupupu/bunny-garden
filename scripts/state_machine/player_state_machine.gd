@@ -1,53 +1,50 @@
 class_name PlayerStateMachine
 extends Node
 
-@export var initial_node_state : PlayerState
+@export var initial_state: PlayerState
 
-var node_states : Dictionary = {}
-var current_node_state : PlayerState
-var current_node_state_name : String
-var parent_node_name: String
+var states: Dictionary = {}
+var current_state: PlayerState
+var current_state_name: String
+var parent_name: String
 
 func _ready() -> void:
-	parent_node_name = get_parent().name
+	parent_name = get_parent().name
 	
 	for child in get_children():
 		if child is PlayerState:
-			node_states[child.name.to_lower()] = child
+			states[child.name.to_lower()] = child
 			child.transition.connect(transition_to)
 	
-	if initial_node_state:
-		initial_node_state._on_enter()
-		current_node_state = initial_node_state
-		current_node_state_name = current_node_state.name.to_lower()
+	if initial_state:
+		enter_state(initial_state)
 
-
-func _process(delta : float) -> void:
-	if current_node_state:
-		current_node_state._on_process(delta)
-
+func _process(delta: float) -> void:
+	if current_state:
+		current_state._on_process(delta)
 
 func _physics_process(delta: float) -> void:
-	if current_node_state:
-		current_node_state._on_physics_process(delta)
-		current_node_state._on_next_transitions()
-		#print(parent_node_name, " Current State: ", current_node_state_name)
+	if current_state:
+		current_state._on_physics_process(delta)
+		current_state._on_next_transitions()
 
-
-func transition_to(node_state_name : String) -> void:
-	if node_state_name == current_node_state.name.to_lower():
+func transition_to(target_state_name: String) -> void:
+	var normalized_name = target_state_name.to_lower()
+	if normalized_name == current_state_name:
 		return
 	
-	var new_node_state = node_states.get(node_state_name.to_lower())
-	
-	if !new_node_state:
+	var new_state = states.get(normalized_name)
+	if !new_state:
 		return
 	
-	if current_node_state:
-		current_node_state._on_exit()
-	
-	new_node_state._on_enter()
-	
-	current_node_state = new_node_state
-	current_node_state_name = current_node_state.name.to_lower()
-	#print("Current State: ", current_node_state_name)
+	exit_current_state()
+	enter_state(new_state)
+
+func exit_current_state() -> void:
+	if current_state:
+		current_state._on_exit()
+
+func enter_state(new_state: PlayerState) -> void:
+	new_state._on_enter()
+	current_state = new_state
+	current_state_name = new_state.name.to_lower()

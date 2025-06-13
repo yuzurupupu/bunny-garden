@@ -1,6 +1,9 @@
+# NOTE: This script is based on the following tutorial:
+# YouTube Tutorial by Rapid Vectors ： https://www.youtube.com/watch?v=it0lsREGdmc&t=207s
+
 class_name GameInputEvent
 
-static var direction: Vector2
+static var direction: Vector2 = Vector2.ZERO
 
 static func movement_input() -> Vector2:
 	if Input.is_action_pressed("walk_left"):
@@ -11,19 +14,12 @@ static func movement_input() -> Vector2:
 		direction = Vector2.UP
 	elif Input.is_action_pressed("walk_down"):
 		direction = Vector2.DOWN
-	else :
+	else:
 		direction = Vector2.ZERO
-		
 	return direction
 
-static  func is_movement_input() -> bool:
-	if direction == Vector2.ZERO:
-		return false
-	else:
-		return true
+static func is_movement_input() -> bool:
+	return direction != Vector2.ZERO
 
 static func use_tool() -> bool:
-	var use_tool_value:bool = Input.is_action_just_pressed("hit")
-	
-	return use_tool_value
-	
+	return Input.is_action_just_pressed("hit")
