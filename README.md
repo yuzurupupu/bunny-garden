@@ -35,6 +35,12 @@ Optional link: [https://cupnooble.itch.io/sprout-lands-ui-pack](https://cupnoobl
 - [ZX Palm](https://damieng.com/typography/zx-origins/zx-palm/) by Damien Guard  
   > Free for personal and commercial use with attribution
 
+🧩 Plugin
+Dialogue Manager (version 3.6.3)
+Link: https://godotengine.org/asset-library/asset/3654
+Licensed under MIT License
+Used for managing nonlinear dialogue with balloon system and localization support
+
 🎓 Reference Tutorial
 - [YouTube Tutorial by Rapid Vectors](https://www.youtube.com/watch?v=it0lsREGdmc&t=207s&ab_channel=RapidVectors)  
   > Used as a learning reference for Godot farming mechanics
